@@ -18,7 +18,7 @@ export default function RootLayout({
       className={`${gmarketSans.variable} ${pretendard.variable}`}
     >
       <body className="font-pretendard">
-        <main className="min-h-screen bg-white text-primary">{children}</main>
+        <main className="min-h-screen bg-white text-blue-1000">{children}</main>
       </body>
     </html>
   );
