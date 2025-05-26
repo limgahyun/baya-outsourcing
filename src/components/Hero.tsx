@@ -20,16 +20,16 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-20 h-full flex items-center">
         <div className="w-full md:w-1/2 md:ml-auto">
-          <div className="max-w-xl mx-auto px-4 text-center md:text-left text-white">
+          <div className="max-w-xl mx-auto px-4 text-center md:text-left text-white break-keep">
             <h1 className="font-pretendard font-bold mb-6">
-              <div className="text-2xl md:text-3xl lg:text-4xl mb-2">
+              <div className="text-2xl md:text-3xl lg:text-4xl mb-2 break-keep">
                 사업을 이해하는 개발 파트너,
               </div>
-              <div className="text-4xl md:text-5xl lg:text-6xl">
+              <div className="text-4xl md:text-5xl lg:text-6xl break-keep">
                 <span className="text-blue-300">뚝딱랩</span> 입니다
               </div>
             </h1>
-            <p className="font-pretendard text-lg md:text-xl lg:text-2xl mb-12 whitespace-pre-line text-gray-100">
+            <p className="font-pretendard text-lg md:text-xl lg:text-2xl mb-12 whitespace-pre-line text-gray-100 break-keep">
               {
                 "개발자가 아닌 사업의 본질을 꿰뚫는 파트너\n2분만 둘러보세요\n왜 뚝딱랩이 해답인지 아실겁니다."
               }
@@ -39,7 +39,7 @@ export default function Hero() {
                 const element = document.getElementById("contact");
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-blue-500 hover:bg-blue-400 text-white font-pretendard font-medium px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+              className="bg-blue-500 hover:bg-blue-400 text-white font-pretendard font-medium px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl break-keep"
             >
               프로젝트 문의하기
             </button>

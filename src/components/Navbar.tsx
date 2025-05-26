@@ -20,7 +20,7 @@ export default function Navbar() {
               height={32}
               className="w-8 h-8"
             />
-            <span className="font-pretendard font-bold text-xl text-blue-1000">
+            <span className="font-pretendard font-bold text-xl text-blue-1000 break-keep">
               뚝딱랩
             </span>
           </Link>
@@ -30,19 +30,19 @@ export default function Navbar() {
             <div className="hidden md:flex items-center space-x-8">
               <Link
                 href="/estimate"
-                className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors"
+                className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors break-keep"
               >
                 뚝딱 견적소
               </Link>
               <Link
                 href="/portfolio"
-                className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors"
+                className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors break-keep"
               >
                 포트폴리오
               </Link>
               <Link
                 href="/blog"
-                className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors"
+                className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors break-keep"
               >
                 블로그
               </Link>
@@ -51,7 +51,7 @@ export default function Navbar() {
             {/* Desktop CTA Button */}
             <Link
               href="/contact"
-              className="hidden md:block bg-blue-1000 text-white px-6 py-2 rounded-full font-pretendard font-medium hover:bg-blue-900 transition-colors"
+              className="hidden md:block bg-blue-1000 text-white px-6 py-2 rounded-full font-pretendard font-medium hover:bg-blue-900 transition-colors break-keep"
             >
               프로젝트 문의하기
             </Link>
@@ -94,28 +94,28 @@ export default function Navbar() {
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <Link
               href="/estimate"
-              className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2"
+              className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
               뚝딱 견적소
             </Link>
             <Link
               href="/portfolio"
-              className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2"
+              className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
               포트폴리오
             </Link>
             <Link
               href="/blog"
-              className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2"
+              className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
               블로그
             </Link>
             <Link
               href="/contact"
-              className="bg-blue-1000 text-white px-6 py-3 rounded-full font-pretendard font-medium hover:bg-blue-900 transition-colors text-center"
+              className="bg-blue-1000 text-white px-6 py-3 rounded-full font-pretendard font-medium hover:bg-blue-900 transition-colors text-center break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
               프로젝트 문의하기

@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html
       lang="ko"
-      className={`${gmarketSans.variable} ${pretendard.variable}`}
+      className={`${gmarketSans.variable} ${pretendard.variable} break-keep`}
     >
       <body className="font-pretendard">
         <Navbar />

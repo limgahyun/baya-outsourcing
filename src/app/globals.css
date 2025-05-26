@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
