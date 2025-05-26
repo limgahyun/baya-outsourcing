@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="relative z-20 h-full flex items-center">
         <div className="w-full md:w-1/2 md:ml-auto">
           <div className="max-w-xl mx-auto px-4 text-center md:text-left text-white break-keep">
-            <h1 className="font-pretendard font-bold mb-6">
+            <h1 className="font-gmarket font-medium mb-6">
               <div className="text-2xl md:text-3xl lg:text-4xl mb-2 break-keep">
                 사업을 이해하는 개발 파트너,
               </div>
