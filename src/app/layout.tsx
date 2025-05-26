@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { gmarketSans, pretendard } from "./fonts";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "DDUG DDAG LAB",
@@ -14,11 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="ko"
       className={`${gmarketSans.variable} ${pretendard.variable}`}
     >
       <body className="font-pretendard">
-        <main className="min-h-screen bg-white text-blue-1000">{children}</main>
+        <Navbar />
+        <main className="min-h-screen bg-white text-gray-900 pt-16">
+          {children}
+        </main>
       </body>
     </html>
   );
