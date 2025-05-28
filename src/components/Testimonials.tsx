@@ -2,64 +2,25 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { testimonials, PatternType } from "@/data/testimonials";
+import { testimonials } from "@/data/testimonials";
 import "swiper/css";
 import "swiper/css/pagination";
 
-interface PatternElementProps {
-  pattern: PatternType;
-  className?: string;
-}
-
-const PatternElement = ({ pattern, className = "" }: PatternElementProps) => {
-  switch (pattern) {
-    case "circle":
-      return (
-        <div
-          className={`absolute right-4 top-4 w-20 h-20 rounded-full opacity-10 ${className}`}
-        />
-      );
-    case "dots":
-      return (
-        <div className={`absolute right-4 top-4 opacity-10 ${className}`}>
-          {[...Array(9)].map((_, i) => (
-            <div
-              key={i}
-              className="w-2 h-2 rounded-full inline-block m-1"
-              style={{
-                backgroundColor: "currentColor",
-                transform: i % 3 === 0 ? "translateY(2px)" : "none",
-              }}
-            />
-          ))}
-        </div>
-      );
-    case "wave":
-      return (
-        <svg
-          className={`absolute right-4 top-4 w-20 h-20 opacity-10 ${className}`}
-          viewBox="0 0 100 100"
-          fill="none"
-          stroke="currentColor"
-        >
-          <path d="M10 50 Q 25 30 40 50 T 70 50 T 100 50" strokeWidth="4" />
-        </svg>
-      );
-    case "zigzag":
-      return (
-        <svg
-          className={`absolute right-4 top-4 w-20 h-20 opacity-10 ${className}`}
-          viewBox="0 0 100 100"
-          fill="none"
-          stroke="currentColor"
-        >
-          <path d="M10 30 L 30 70 L 50 30 L 70 70 L 90 30" strokeWidth="4" />
-        </svg>
-      );
-    default:
-      return null;
-  }
-};
+const ClipPattern = ({ className = "" }: { className?: string }) => (
+  <div className="absolute -right-8 bottom-0 w-48 h-48 transform rotate-12 opacity-10">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0,0,256,256"
+      className={className}
+    >
+      <g fill="currentColor" fillRule="nonzero">
+        <g transform="scale(5.12,5.12)">
+          <path d="M38.1875,6.71875c-1.92578,0.09375 -3.84375,0.92969 -5.34375,2.375c-0.03125,0.03125 -0.0625,0.0625 -0.09375,0.09375c-0.00391,0.00391 -0.02734,-0.00391 -0.03125,0c-0.04297,0.05078 -0.08594,0.10156 -0.125,0.15625c-0.04297,0.05078 -0.08594,0.10156 -0.125,0.15625l-18.8125,18.90625c-0.04297,0.05078 -0.08594,0.10156 -0.125,0.15625c-1.76953,1.91797 -1.73437,4.95313 0.125,6.8125c1.90625,1.91016 5.09375,1.91016 7,0c0.09375,-0.09375 0.17578,-0.19922 0.25,-0.3125c0.08984,-0.06641 0.17188,-0.14062 0.25,-0.21875l14.09375,-13.90625c0.62891,-0.59375 0.80469,-1.52734 0.43359,-2.30859c-0.37109,-0.78125 -1.19922,-1.23828 -2.05859,-1.12891c-0.45312,0.05859 -0.87109,0.26563 -1.1875,0.59375l-14.09375,13.90625c-0.05859,0.07031 -0.10937,0.14063 -0.15625,0.21875c-0.01953,0.01172 -0.04297,0.01953 -0.0625,0.03125c-0.01172,0.01953 -0.01953,0.04297 -0.03125,0.0625c-0.10156,0.0625 -0.19531,0.13672 -0.28125,0.21875c-0.37891,0.37891 -0.93359,0.38281 -1.3125,0c-0.37891,-0.37891 -0.38281,-0.92969 0,-1.3125l19.09375,-19.1875c0.04297,-0.05078 0.08594,-0.10156 0.125,-0.15625c1.64453,-1.51562 3.83984,-1.50391 5.0625,-0.28125c0.08594,0.08203 0.17969,0.15625 0.28125,0.21875c0.01172,0.01172 0.01953,0.01953 0.03125,0.03125c0.05859,0.07813 0.12109,0.15234 0.1875,0.21875c1.14453,1.14453 0.95313,3.55859 -0.65625,5.25c-0.03125,0.03125 -0.0625,0.0625 -0.09375,0.09375l-20.6875,21.21875c-0.06641,0.04688 -0.12891,0.10156 -0.1875,0.15625c-2.68359,2.68359 -7.30469,3.00781 -9.875,0.4375c-2.51953,-2.51953 -2.25781,-7.07812 0.3125,-9.78125c0.04297,-0.03906 0.08594,-0.08203 0.125,-0.125l17.03125,-16.84375c0.62891,-0.59375 0.80469,-1.52734 0.43359,-2.30859c-0.37109,-0.78125 -1.19922,-1.23828 -2.05859,-1.12891c-0.45312,0.05859 -0.87109,0.26563 -1.1875,0.59375l-16.9375,16.75c-0.03125,0.03125 -0.0625,0.0625 -0.09375,0.09375c-0.04297,0.05078 -0.08594,0.10156 -0.125,0.15625c-4.04687,4.19531 -4.59766,11.15625 -0.34375,15.40625c4.22266,4.22266 11.14453,3.77344 15.34375,-0.21875c0.04297,-0.03125 0.08594,-0.0625 0.125,-0.09375c0.01172,-0.01172 0.01953,-0.01953 0.03125,-0.03125c0.01953,-0.01953 0.04297,-0.04297 0.0625,-0.0625c0,-0.01172 0,-0.01953 0,-0.03125l0.125,-0.125c0.04297,-0.05078 0.08594,-0.10156 0.125,-0.15625l20.65625,-21.09375c0.14844,-0.13672 0.27344,-0.29297 0.375,-0.46875c2.63672,-3.01562 3.21094,-7.60156 0.3125,-10.5c-0.05078,-0.04297 -0.10156,-0.08594 -0.15625,-0.125c-0.08984,-0.13672 -0.19531,-0.26172 -0.3125,-0.375c-1.47656,-1.47656 -3.46484,-2.12891 -5.4375,-2.03125z" />
+        </g>
+      </g>
+    </svg>
+  </div>
+);
 
 export default function Testimonials() {
   return (
@@ -100,11 +61,8 @@ export default function Testimonials() {
                 <div
                   className={`${testimonial.bgColor} p-6 md:p-8 rounded-2xl shadow-lg h-full min-h-[320px] flex flex-col relative overflow-hidden transition-transform duration-300 hover:scale-[1.02] group`}
                 >
-                  {/* Background Pattern */}
-                  <PatternElement
-                    pattern={testimonial.pattern}
-                    className={testimonial.accentColor}
-                  />
+                  {/* Background Clip Pattern */}
+                  <ClipPattern className={testimonial.accentColor} />
 
                   {/* Quote Icon */}
                   <div className="mb-6 relative z-10">
