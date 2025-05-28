@@ -21,7 +21,7 @@ export default function Portfolio() {
   if (!mounted) return null;
 
   return (
-    <section className="py-20 md:pt-20 bg-blue-1000 overflow-hidden">
+    <section className="py-20 md:pb-0 bg-blue-1000 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Title and CTA */}
