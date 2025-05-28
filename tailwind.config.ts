@@ -70,6 +70,21 @@ const config: Config = {
         gmarket: ["var(--font-gmarket-sans)"],
         pretendard: ["var(--font-pretendard)"],
       },
+      keyframes: {
+        "scroll-down": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-50%)" },
+        },
+        "scroll-up": {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "scroll-down": "scroll-down 20s linear infinite",
+        "scroll-up-slow": "scroll-up 25s linear infinite",
+        "scroll-down-fast": "scroll-down 15s linear infinite",
+      },
     },
   },
   plugins: [],
