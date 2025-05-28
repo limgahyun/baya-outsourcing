@@ -24,7 +24,7 @@ const ClipPattern = ({ className = "" }: { className?: string }) => (
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
