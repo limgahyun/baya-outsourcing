@@ -21,7 +21,7 @@ export default function Portfolio() {
   if (!mounted) return null;
 
   return (
-    <section className="py-20 bg-blue-1000 overflow-hidden">
+    <section className="py-20 md:pt-20 bg-blue-1000 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Title and CTA */}
@@ -40,7 +40,7 @@ export default function Portfolio() {
           {/* Portfolio Grid with Animations */}
           <div className="grid grid-cols-3 gap-4">
             {/* Left Column - Moving Down */}
-            <div className="relative overflow-hidden h-screen">
+            <div className="relative overflow-hidden h-[40vh] md:h-screen">
               <div className="absolute w-full animate-scroll-down">
                 {[...columnImages.left, ...columnImages.left].map(
                   (image, index) => (
@@ -61,7 +61,7 @@ export default function Portfolio() {
             </div>
 
             {/* Middle Column - Moving Up Slower */}
-            <div className="relative overflow-hidden h-screen">
+            <div className="relative overflow-hidden h-[40vh] md:h-screen">
               <div className="absolute w-full animate-scroll-up-slow">
                 {[...columnImages.middle, ...columnImages.middle].map(
                   (image, index) => (
@@ -82,7 +82,7 @@ export default function Portfolio() {
             </div>
 
             {/* Right Column - Moving Down Fast */}
-            <div className="relative overflow-hidden h-screen">
+            <div className="relative overflow-hidden h-[40vh] md:h-screen">
               <div className="absolute w-full animate-scroll-down-fast">
                 {[...columnImages.right, ...columnImages.right].map(
                   (image, index) => (
