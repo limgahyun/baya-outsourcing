@@ -31,20 +31,20 @@ export default function Portfolio() {
             </h2>
             <Link
               href="/portfolio"
-              className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-pretendard px-8 py-4 rounded-full transition-colors duration-300"
+              className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg"
             >
               포트폴리오 보러가기
             </Link>
           </div>
 
           {/* Portfolio Grid with Animations */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4">
             {/* Left Column - Moving Down */}
             <div className="relative overflow-hidden h-[40vh] md:h-screen">
               <div className="absolute w-full animate-scroll-down">
                 {[...columnImages.left, ...columnImages.left].map(
                   (image, index) => (
-                    <div key={index} className="mb-4">
+                    <div key={index} className="mb-2 sm:mb-4">
                       <Image
                         src={image}
                         alt={`포트폴리오 이미지 ${index + 1}`}
@@ -65,7 +65,7 @@ export default function Portfolio() {
               <div className="absolute w-full animate-scroll-up-slow">
                 {[...columnImages.middle, ...columnImages.middle].map(
                   (image, index) => (
-                    <div key={index} className="mb-4">
+                    <div key={index} className="mb-2 sm:mb-4">
                       <Image
                         src={image}
                         alt={`포트폴리오 이미지 ${index + 1}`}
@@ -86,7 +86,7 @@ export default function Portfolio() {
               <div className="absolute w-full animate-scroll-down-fast">
                 {[...columnImages.right, ...columnImages.right].map(
                   (image, index) => (
-                    <div key={index} className="mb-4">
+                    <div key={index} className="mb-2 sm:mb-4">
                       <Image
                         src={image}
                         alt={`포트폴리오 이미지 ${index + 1}`}

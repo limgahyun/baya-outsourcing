@@ -51,7 +51,7 @@ export default function Navbar() {
             {/* Desktop CTA Button */}
             <Link
               href="/contact"
-              className="hidden md:block bg-blue-1000 text-white px-6 py-2 rounded-full font-pretendard font-medium hover:bg-blue-900 transition-colors break-keep"
+              className="hidden md:block bg-blue-1000 text-white px-6 py-3 rounded-lg font-pretendard font-medium hover:bg-blue-900 transition-all duration-300 hover:shadow-lg break-keep"
             >
               프로젝트 문의하기
             </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/contact"
-              className="bg-blue-1000 text-white px-6 py-3 rounded-full font-pretendard font-medium hover:bg-blue-900 transition-colors text-center break-keep"
+              className="hidden md:block bg-blue-1000 text-white px-6 py-3 rounded-lg font-pretendard font-medium hover:bg-blue-900 transition-all duration-300 hover:shadow-lg break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
               프로젝트 문의하기

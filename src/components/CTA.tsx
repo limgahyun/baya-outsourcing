@@ -33,9 +33,7 @@ export default function CTA() {
                 contactSection.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-8 py-4 rounded-lg 
-              transition-all duration-300 transform hover:scale-105 hover:shadow-lg
-              text-lg md:text-xl"
+            className="bg-white hover:bg-gray-200 text-blue-1000 px-8 py-3 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg text-lg break-keep"
           >
             프로젝트 문의하기
           </button>

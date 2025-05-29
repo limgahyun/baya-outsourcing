@@ -39,7 +39,7 @@ export default function Hero() {
                 const element = document.getElementById("contact");
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-blue-500 hover:bg-blue-400 text-white font-pretendard font-medium px-8 py-4 rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-xl break-keep"
+              className="bg-white hover:bg-gray-200 text-blue-1000 px-8 py-3 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg text-lg break-keep"
             >
               프로젝트 문의하기
             </button>
