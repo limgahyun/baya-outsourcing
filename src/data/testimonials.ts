@@ -1,5 +1,3 @@
-export type PatternType = "circle" | "dots" | "wave" | "zigzag";
-
 export interface Testimonial {
   content: string;
   author: string;
@@ -7,7 +5,6 @@ export interface Testimonial {
   company: string;
   bgColor: string;
   accentColor: string;
-  pattern: PatternType;
 }
 
 export const testimonials: Testimonial[] = [
@@ -19,7 +16,6 @@ export const testimonials: Testimonial[] = [
     company: "ALAN inc.",
     bgColor: "bg-blue-100",
     accentColor: "text-blue-500",
-    pattern: "circle",
   },
   {
     content:
@@ -29,7 +25,6 @@ export const testimonials: Testimonial[] = [
     company: "believe",
     bgColor: "bg-green-100",
     accentColor: "text-green-500",
-    pattern: "dots",
   },
   {
     content:
@@ -39,7 +34,6 @@ export const testimonials: Testimonial[] = [
     company: "리커머스",
     bgColor: "bg-yellow-100",
     accentColor: "text-yellow-500",
-    pattern: "wave",
   },
   {
     content:
@@ -49,6 +43,5 @@ export const testimonials: Testimonial[] = [
     company: "바이오세레나티",
     bgColor: "bg-red-100",
     accentColor: "text-red-500",
-    pattern: "zigzag",
   },
 ];
