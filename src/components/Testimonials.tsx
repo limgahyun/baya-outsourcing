@@ -27,7 +27,7 @@ export default function Testimonials() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto relative">
+        <div className="max-w-6xl mx-auto">
           {/* Section Title with Navigation */}
           <div className="relative flex items-center justify-between mb-12 h-auto">
             <div className="flex-1">
@@ -38,7 +38,7 @@ export default function Testimonials() {
                 뚝딱랩과 함께한 고객들의 이야기
               </p>
             </div>
-            <div className="absolute bottom-0 right-0 flex gap-8">
+            <div className="absolute bottom-0 right-0 gap-8 hidden sm:flex">
               <button className="custom-swiper-button-prev w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-50 transition-colors">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ export default function Testimonials() {
           {/* Testimonial Carousel */}
           <Swiper
             modules={[Autoplay, Pagination, Navigation]}
-            spaceBetween={30}
+            spaceBetween={16}
             slidesPerView={1}
             breakpoints={{
               640: { slidesPerView: 2 },
@@ -95,7 +95,7 @@ export default function Testimonials() {
               nextEl: ".custom-swiper-button-next",
             }}
             loop={true}
-            className="testimonial-swiper !pb-14 !px-1"
+            className="testimonial-swiper !pb-14 !mx-[-4px]"
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index} className="h-auto p-2">
