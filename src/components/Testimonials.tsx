@@ -1,10 +1,11 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { testimonials } from "@/data/testimonials";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const ClipPattern = ({ className = "" }: { className?: string }) => (
   <div className="absolute -right-8 bottom-0 w-48 h-48 transform rotate-12 opacity-10">
@@ -26,20 +27,56 @@ export default function Testimonials() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Title */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-gmarket mb-4 text-blue-1000">
-              고객 후기
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 font-pretendard">
-              뚝딱랩과 함께한 고객들의 이야기
-            </p>
+        <div className="max-w-6xl mx-auto relative">
+          {/* Section Title with Navigation */}
+          <div className="relative flex items-center justify-between mb-12 h-auto">
+            <div className="flex-1">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-gmarket mb-4 text-blue-1000">
+                고객 후기
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 font-pretendard">
+                뚝딱랩과 함께한 고객들의 이야기
+              </p>
+            </div>
+            <div className="absolute bottom-0 right-0 flex gap-8">
+              <button className="custom-swiper-button-prev w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-6 h-6 text-blue-1000"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </button>
+              <button className="custom-swiper-button-next w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-6 h-6 text-blue-1000"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
 
           {/* Testimonial Carousel */}
           <Swiper
-            modules={[Autoplay, Pagination]}
+            modules={[Autoplay, Pagination, Navigation]}
             spaceBetween={30}
             slidesPerView={1}
             breakpoints={{
@@ -53,11 +90,15 @@ export default function Testimonials() {
             pagination={{
               clickable: true,
             }}
+            navigation={{
+              prevEl: ".custom-swiper-button-prev",
+              nextEl: ".custom-swiper-button-next",
+            }}
             loop={true}
-            className="testimonial-swiper !pb-14"
+            className="testimonial-swiper !pb-14 !px-1"
           >
             {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index} className="h-auto">
+              <SwiperSlide key={index} className="h-auto p-2">
                 <div
                   className={`${testimonial.bgColor} p-6 md:p-8 rounded-2xl shadow-lg h-full min-h-[320px] flex flex-col relative overflow-hidden transition-transform duration-300 hover:scale-[1.02] group`}
                 >
