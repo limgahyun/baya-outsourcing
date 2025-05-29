@@ -7,6 +7,19 @@
     word-break: keep-all;
     word-wrap: break-word;
   }
+
+  /* Set default line height for all text content */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  div {
+    line-height: 140%;
+  }
 }
 
 :root {

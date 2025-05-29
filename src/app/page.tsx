@@ -4,6 +4,7 @@ import Necessity from "@/components/Necessity";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
 import Strategy from "@/components/Strategy";
+import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Portfolio />
       <Testimonials />
       <Strategy />
+      <CTA />
     </>
   );
 }
