@@ -29,19 +29,21 @@ export default function Navbar() {
             {/* Desktop Navigation Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <Link
-                href="/estimate"
+                href="/coming-soon"
                 className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors break-keep"
               >
                 뚝딱 견적소
               </Link>
               <Link
-                href="/portfolio"
+                href="/coming-soon"
                 className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors break-keep"
               >
                 포트폴리오
               </Link>
               <Link
-                href="/blog"
+                href="https://brunch.co.kr/@@hQRf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors break-keep"
               >
                 블로그
@@ -50,7 +52,9 @@ export default function Navbar() {
 
             {/* Desktop CTA Button */}
             <Link
-              href="/contact"
+              href="https://tally.so/r/mVyWdy"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:block bg-blue-1000 text-white px-6 py-3 rounded-lg font-pretendard font-medium hover:bg-blue-900 transition-all duration-300 hover:shadow-lg break-keep"
             >
               프로젝트 문의하기
@@ -93,28 +97,32 @@ export default function Navbar() {
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <Link
-              href="/estimate"
+              href="/coming-soon"
               className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
               뚝딱 견적소
             </Link>
             <Link
-              href="/portfolio"
+              href="/coming-soon"
               className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
               포트폴리오
             </Link>
             <Link
-              href="/blog"
+              href="https://brunch.co.kr/@@hQRf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
               블로그
             </Link>
             <Link
-              href="/contact"
+              href="https://tally.so/r/mVyWdy"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:block bg-blue-1000 text-white px-6 py-3 rounded-lg font-pretendard font-medium hover:bg-blue-900 transition-all duration-300 hover:shadow-lg break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
