@@ -36,8 +36,7 @@ export default function Hero() {
             </p>
             <button
               onClick={() => {
-                const element = document.getElementById("contact");
-                element?.scrollIntoView({ behavior: "smooth" });
+                window.open("https://tally.so/r/mVyWdy", "_blank");
               }}
               className="bg-white hover:bg-gray-200 text-blue-1000 px-8 py-3 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg text-lg break-keep"
             >

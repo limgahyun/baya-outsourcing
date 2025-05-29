@@ -27,11 +27,7 @@ export default function CTA() {
 
           <button
             onClick={() => {
-              // Smooth scroll to contact form or open modal
-              const contactSection = document.getElementById("contact");
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: "smooth" });
-              }
+              window.open("https://tally.so/r/mVyWdy", "_blank");
             }}
             className="bg-white hover:bg-gray-200 text-blue-1000 px-8 py-3 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg text-lg break-keep"
           >

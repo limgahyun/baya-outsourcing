@@ -30,7 +30,7 @@ export default function Portfolio() {
               믿고 맡겨주신 결과들
             </h2>
             <Link
-              href="/portfolio"
+              href="/coming-soon"
               className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg"
             >
               포트폴리오 보러가기
