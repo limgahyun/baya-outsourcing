@@ -2,7 +2,13 @@
 
 import React, { useRef } from "react";
 import Lottie from "lottie-react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  MotionValue,
+} from "framer-motion";
 import clientAnimation from "../../public/lottie/client.json";
 import companyAnimation from "../../public/lottie/company.json";
 import severityAnimation1 from "../../public/lottie/severity1.json";
@@ -41,6 +47,7 @@ interface ChatBubbleProps {
   speaker: string;
   message: string;
   animationData: LottieAnimationData;
+  sectionOpacity: MotionValue<number>;
 }
 
 const ChatBubble: React.FC<ChatBubbleProps> = ({
@@ -48,31 +55,54 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
   speaker,
   message,
   animationData,
-}) => (
-  <div
-    className={`w-full flex ${
-      isClient ? "flex-row" : "flex-row-reverse"
-    } items-start gap-5`}
-  >
-    <div className="w-[64px] h-[64px] flex-shrink-0">
-      <Lottie animationData={animationData} loop={true} />
-    </div>
-    <div className={`flex flex-col ${isClient ? "items-start" : "items-end"}`}>
-      <div className="font-bold text-lg text-gray-800 mb-2.5">{speaker}</div>
-      <div
-        className={`relative ${
-          isClient ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-800"
-        } ${
-          isClient
-            ? "rounded-tr-[20px] rounded-br-[20px] rounded-bl-[20px]"
-            : "rounded-tl-[20px] rounded-bl-[20px] rounded-br-[20px]"
-        } py-4 px-6 sm:pr-10 sm:pl-6 max-w-full text-lg md:text-xl`}
-      >
-        {message}
+  sectionOpacity,
+}) => {
+  const bubbleOpacity = useTransform(
+    sectionOpacity,
+    [0, isClient ? 0.2 : 0.5, isClient ? 0.4 : 0.7, 1],
+    [0, 0, 1, 1],
+    { clamp: false }
+  );
+
+  const bubbleY = useTransform(
+    sectionOpacity,
+    [0, isClient ? 0.2 : 0.5, isClient ? 0.4 : 0.7, 1],
+    [30, 30, 0, 0],
+    { clamp: false }
+  );
+
+  return (
+    <motion.div
+      style={{
+        opacity: bubbleOpacity,
+        y: bubbleY,
+      }}
+      className={`w-full flex ${
+        isClient ? "flex-row" : "flex-row-reverse"
+      } items-start gap-5`}
+    >
+      <div className="w-[64px] h-[64px] flex-shrink-0">
+        <Lottie animationData={animationData} loop={true} />
       </div>
-    </div>
-  </div>
-);
+      <div
+        className={`flex flex-col ${isClient ? "items-start" : "items-end"}`}
+      >
+        <div className="font-bold text-lg text-gray-800 mb-2.5">{speaker}</div>
+        <div
+          className={`relative ${
+            isClient ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-800"
+          } ${
+            isClient
+              ? "rounded-tr-[20px] rounded-br-[20px] rounded-bl-[20px]"
+              : "rounded-tl-[20px] rounded-bl-[20px] rounded-br-[20px]"
+          } py-4 px-6 sm:pr-10 sm:pl-6 max-w-full text-lg md:text-xl`}
+        >
+          {message}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 interface ChatSectionProps {
   conversations: {
@@ -87,18 +117,26 @@ interface ChatSectionProps {
 const ChatSection: React.FC<ChatSectionProps> = ({
   conversations,
   opacity,
-}) => (
-  <motion.section
-    style={{ opacity }}
-    className="w-full min-h-[60vh] bg-white py-28 px-5 flex items-center"
-  >
-    <div className="max-w-6xl mx-auto w-full flex flex-col gap-5">
-      {conversations.map((conv, index) => (
-        <ChatBubble key={index} {...conv} />
-      ))}
-    </div>
-  </motion.section>
-);
+}) => {
+  const springConfig = {
+    stiffness: 70, // Reduced stiffness for slower animation
+    damping: 15, // Reduced damping for more smooth movement
+  };
+  const sectionOpacity = useSpring(opacity as number, springConfig);
+
+  return (
+    <motion.section
+      style={{ opacity }}
+      className="w-full min-h-[60vh] bg-white py-28 px-5 flex items-center"
+    >
+      <div className="max-w-6xl mx-auto w-full flex flex-col gap-5">
+        {conversations.map((conv, index) => (
+          <ChatBubble key={index} {...conv} sectionOpacity={sectionOpacity} />
+        ))}
+      </div>
+    </motion.section>
+  );
+};
 
 const Severity: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
