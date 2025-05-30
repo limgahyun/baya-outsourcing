@@ -127,7 +127,7 @@ const ChatSection: React.FC<ChatSectionProps> = ({
   return (
     <motion.section
       style={{ opacity }}
-      className="w-full min-h-[60vh] bg-white py-28 px-5 flex items-center"
+      className="w-full h-[65vh] md:h-[60vh] bg-white py-28 px-5 flex items-center"
     >
       <div className="max-w-6xl mx-auto w-full flex flex-col gap-5">
         {conversations.map((conv, index) => (
@@ -236,7 +236,7 @@ const Severity: React.FC = () => {
     <div ref={containerRef} className="relative w-full h-[600vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Chat sections */}
-        <div className="absolute inset-0 lg:w-[65vw] lg:mx-auto">
+        <div className="absolute inset-0 lg:w-[60vw] lg:mx-auto">
           <ChatSection
             conversations={firstConversation}
             opacity={firstAnimationOpacity as unknown as number}
@@ -257,14 +257,14 @@ const Severity: React.FC = () => {
 
         {/* Fixed severity content at bottom */}
         <div className="absolute bottom-0 left-0 right-0">
-          <section className="relative bg-gray-800 h-35vh py-20 px-5 text-center text-white">
+          <section className="relative bg-gray-800 h-[35vh] md:h-[40vh] flex items-center justify-center py-auto px-5 text-center text-white">
             {/* First animation */}
             <motion.div
               style={{
                 x: firstAnimationX,
                 opacity: firstAnimationOpacity,
               }}
-              className="absolute left-1/2 -translate-x-1/2 -top-[60px] w-[120px] h-[120px]"
+              className="absolute left-1/2 -translate-x-1/2 -top-[60px] w-[80px] h-[80px] md:w-[100px] md:h-[100px]"
             >
               <Lottie animationData={severityAnimation1} loop={true} />
             </motion.div>
@@ -275,7 +275,7 @@ const Severity: React.FC = () => {
                 x: secondAnimationX,
                 opacity: secondAnimationOpacity,
               }}
-              className="absolute left-1/2 -translate-x-1/2 -top-[60px] w-[120px] h-[120px]"
+              className="absolute left-1/2 -translate-x-1/2 -top-[60px] w-[80px] h-[80px] md:w-[100px] md:h-[100px]"
             >
               <Lottie animationData={severityAnimation2} loop={true} />
             </motion.div>
@@ -286,12 +286,12 @@ const Severity: React.FC = () => {
                 x: thirdAnimationX,
                 opacity: thirdAnimationOpacity,
               }}
-              className="absolute left-1/2 -translate-x-1/2 -top-[60px] w-[140px] h-[140px]"
+              className="absolute left-1/2 -translate-x-1/2 -top-[60px] w-[80px] h-[80px] md:w-[100px] md:h-[100px]"
             >
               <Lottie animationData={severityAnimation3} loop={true} />
             </motion.div>
 
-            <div className="mx-auto pt-[20px]">
+            <div className="mx-auto">
               <h2 className="font-gmarket text-2xl md:text-3xl lg:text-4xl mb-5">
                 <span className="text-red-500">피같은 돈</span>을 투자해 믿고
                 맡겼던 외주 개발
