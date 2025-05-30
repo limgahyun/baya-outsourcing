@@ -21,10 +21,13 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
   animationData,
 }) => (
   <div
-    className={`w-[45%] flex flex-row${
-      isClient ? "-reverse" : ""
+    className={`w-full flex ${
+      isClient ? "flex-row" : "flex-row-reverse"
     } items-start gap-5 ${!isClient ? "self-end" : ""}`}
   >
+    <div className="w-[64px] h-[64px] flex-shrink-0">
+      <Lottie animationData={animationData} loop={true} />
+    </div>
     <div className={`flex flex-col items-${isClient ? "start" : "end"}`}>
       <div className="font-bold text-lg text-gray-800 mb-2.5">{speaker}</div>
       <div
@@ -37,17 +40,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
         } p-4 max-w-full`}
       >
         {message}
-        <div
-          className={`absolute ${
-            isClient ? "left" : "right"
-          }-[-15px] top-1/2 -translate-y-1/2 border-[15px] border-transparent ${
-            isClient ? "border-r-[#007AFF]" : "border-l-[#E9ECEF]"
-          }`}
-        />
       </div>
-    </div>
-    <div className="w-[64px] h-[64px] flex-shrink-0">
-      <Lottie animationData={animationData} loop={true} />
     </div>
   </div>
 );
@@ -87,7 +80,7 @@ interface ChatSectionProps {
 
 const ChatSection: React.FC<ChatSectionProps> = ({ conversations }) => (
   <section className="w-full h-60vh bg-white py-28 px-5">
-    <div className="max-w-7xl mx-auto flex flex-col gap-5">
+    <div className="max-w-6xl mx-auto flex flex-col gap-5">
       {conversations.map((conv, index) => (
         <ChatBubble key={index} {...conv} />
       ))}
@@ -128,12 +121,12 @@ const Severity: React.FC = () => {
 
   return (
     <>
-      <section className="w-full">
+      <section className="w-full h-100vh">
         <ChatSection conversations={firstConversation} />
         <SeverityContent animationData={severityAnimation1} />
       </section>
 
-      <section className="w-full">
+      <section className="w-full h-100vh">
         <ChatSection conversations={secondConversation} />
         <SeverityContent animationData={severityAnimation2} />
       </section>
