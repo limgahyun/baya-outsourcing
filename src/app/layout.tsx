@@ -6,11 +6,16 @@ import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ddugddag.com"),
   title: "뚝딱랩 | 외주개발디자인",
   description: "사업을 이해하는 개발 파트너, 뚝딱랩",
   openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    url: "https://ddugddag.com",
     title: "뚝딱랩 | 외주개발디자인",
     description: "사업을 이해하는 개발 파트너, 뚝딱랩",
+    siteName: "뚝딱랩",
     images: [
       {
         url: "https://i.ibb.co/FLkmyMtk/main2.png",
@@ -25,6 +30,13 @@ export const metadata: Metadata = {
     title: "뚝딱랩 | 외주개발디자인",
     description: "사업을 이해하는 개발 파트너, 뚝딱랩",
     images: ["https://i.ibb.co/FLkmyMtk/main2.png"],
+  },
+  alternates: {
+    canonical: "https://ddugddag.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
