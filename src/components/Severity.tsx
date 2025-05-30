@@ -52,7 +52,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
   <div
     className={`w-full flex ${
       isClient ? "flex-row" : "flex-row-reverse"
-    } items-start gap-5`}
+    } items-center gap-5`}
   >
     <div className="w-[64px] h-[64px] flex-shrink-0">
       <Lottie animationData={animationData} loop={true} />
@@ -66,7 +66,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
           isClient
             ? "rounded-tr-[20px] rounded-br-[20px] rounded-bl-[20px]"
             : "rounded-tl-[20px] rounded-bl-[20px] rounded-br-[20px]"
-        } py-4 px-6 max-w-full`}
+        } py-4 px-6 sm:pr-10 sm:pl-6 max-w-full`}
       >
         {message}
       </div>
@@ -90,9 +90,9 @@ const ChatSection: React.FC<ChatSectionProps> = ({
 }) => (
   <motion.section
     style={{ opacity }}
-    className="w-full min-h-[60vh] bg-white py-28 px-5"
+    className="w-full min-h-[60vh] bg-white py-28 px-5 flex items-center"
   >
-    <div className="max-w-6xl mx-auto flex flex-col gap-5">
+    <div className="max-w-6xl mx-auto w-full flex flex-col gap-5">
       {conversations.map((conv, index) => (
         <ChatBubble key={index} {...conv} />
       ))}
@@ -248,22 +248,23 @@ const Severity: React.FC = () => {
                 x: thirdAnimationX,
                 opacity: thirdAnimationOpacity,
               }}
-              className="absolute left-1/2 -translate-x-1/2 -top-[60px] w-[120px] h-[120px]"
+              className="absolute left-1/2 -translate-x-1/2 -top-[60px] w-[140px] h-[140px]"
             >
               <Lottie animationData={severityAnimation3} loop={true} />
             </motion.div>
 
-            <div className="max-w-3xl mx-auto pt-[60px]">
-              <h2 className="font-gmarket text-4xl mb-5 break-keep">
-                피같은 돈을 투자해 밀고 맡겼던 외주 개발
+            <div className="mx-auto pt-[60px]">
+              <h2 className="font-gmarket text-2xl md:text-3xl lg:text-4xl mb-5">
+                <span className="text-red-500">피같은 돈</span>을 투자해 밀고
+                맡겼던 외주 개발
               </h2>
-              <p className="text-xl leading-relaxed break-keep">
+              <p className="text-xl md:text-2xl lg:text-3xl mb-3 md:mb-4">
                 기획한 방향과{" "}
-                <span className="bg-[#333333] py-1 mx-1">전혀 다른 결과물</span>
-                <br />
-                돌아오는{" "}
-                <span className="bg-[#333333] py-1 mx-1">책임 회피</span>에
-                말문이 턱.
+                <span className="bg-red-800">전혀 다른 결과물</span>
+              </p>
+              <p className="text-xl md:text-2xl lg:text-3xl">
+                돌아오는 <span className="bg-red-800">책임 회피</span>에 말문이
+                턱.
               </p>
             </div>
           </section>
