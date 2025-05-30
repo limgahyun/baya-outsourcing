@@ -52,7 +52,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
   <div
     className={`w-full flex ${
       isClient ? "flex-row" : "flex-row-reverse"
-    } items-center gap-5`}
+    } items-start gap-5`}
   >
     <div className="w-[64px] h-[64px] flex-shrink-0">
       <Lottie animationData={animationData} loop={true} />
@@ -61,12 +61,12 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
       <div className="font-bold text-lg text-gray-800 mb-2.5">{speaker}</div>
       <div
         className={`relative ${
-          isClient ? "bg-[#007AFF] text-white" : "bg-[#E9ECEF] text-gray-800"
+          isClient ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-800"
         } ${
           isClient
             ? "rounded-tr-[20px] rounded-br-[20px] rounded-bl-[20px]"
             : "rounded-tl-[20px] rounded-bl-[20px] rounded-br-[20px]"
-        } py-4 px-6 sm:pr-10 sm:pl-6 max-w-full`}
+        } py-4 px-6 sm:pr-10 sm:pl-6 max-w-full text-lg md:text-xl`}
       >
         {message}
       </div>
@@ -198,19 +198,19 @@ const Severity: React.FC = () => {
     <div ref={containerRef} className="relative w-full h-[600vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Chat sections */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 lg:w-[60vw] lg:mx-auto">
           <ChatSection
             conversations={firstConversation}
             opacity={firstAnimationOpacity as unknown as number}
           />
         </div>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 lg:w-[60vw] lg:mx-auto">
           <ChatSection
             conversations={secondConversation}
             opacity={secondAnimationOpacity as unknown as number}
           />
         </div>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 lg:w-[60vw] lg:mx-auto">
           <ChatSection
             conversations={thirdConversation}
             opacity={thirdAnimationOpacity as unknown as number}
@@ -255,7 +255,7 @@ const Severity: React.FC = () => {
 
             <div className="mx-auto pt-[60px]">
               <h2 className="font-gmarket text-2xl md:text-3xl lg:text-4xl mb-5">
-                <span className="text-red-500">피같은 돈</span>을 투자해 밀고
+                <span className="text-red-500">피같은 돈</span>을 투자해 믿고
                 맡겼던 외주 개발
               </h2>
               <p className="text-xl md:text-2xl lg:text-3xl mb-3 md:mb-4">
