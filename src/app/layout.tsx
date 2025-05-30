@@ -38,15 +38,6 @@ export default function RootLayout({
       lang="ko"
       className={`${gmarketSans.variable} ${pretendard.variable} break-keep`}
     >
-      <head>
-        <style>{`
-          * {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            -o-font-smoothing: antialiased;
-          }
-        `}</style>
-      </head>
       <body className="font-pretendard">
         <GoogleAnalytics />
         <Navbar />
