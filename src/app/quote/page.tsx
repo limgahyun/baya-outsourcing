@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 
 type QuoteFormData = {
@@ -10,6 +10,7 @@ type QuoteFormData = {
 };
 
 export default function QuotePage() {
+  const [isSection2Active, setIsSection2Active] = useState(false);
   const {
     register,
     handleSubmit,
@@ -32,6 +33,17 @@ export default function QuotePage() {
     phone?.trim() !== "" &&
     /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/.test(phone);
 
+  const handleArrowClick = () => {
+    if (isFirstSectionComplete) {
+      setIsSection2Active(true);
+      // Smooth scroll to section 2
+      const section2 = document.getElementById("section2");
+      if (section2) {
+        section2.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   const onSubmit = (data: QuoteFormData) => {
     console.log(data);
     // Handle form submission
@@ -48,7 +60,7 @@ export default function QuotePage() {
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {/* Contact Person Information Section */}
-        <section className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
+        <section className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-6 h-6 rounded-full bg-[#444] text-white flex items-center justify-center text-sm font-medium">
               1
@@ -111,14 +123,48 @@ export default function QuotePage() {
               )}
             </div>
           </div>
+
+          {/* Arrow Button */}
+          <div
+            onClick={handleArrowClick}
+            className={`absolute left-1/2 -bottom-6 -translate-x-1/2 w-12 h-12 rounded-full 
+              flex items-center justify-center cursor-pointer transition-all duration-300
+              ${
+                isFirstSectionComplete
+                  ? "bg-blue-600 hover:bg-blue-700 shadow-[0_4px_12px_rgba(37,99,235,0.2)]"
+                  : "bg-gray-100 cursor-not-allowed"
+              }
+              ${
+                isSection2Active
+                  ? "opacity-0 pointer-events-none"
+                  : "opacity-100"
+              }`}
+          >
+            <svg
+              className={`w-6 h-6 transition-transform duration-300 ${
+                isFirstSectionComplete ? "text-white" : "text-gray-400"
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
         </section>
 
         {/* Service Information Section */}
         <section
+          id="section2"
           className={`bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 
             transition-all duration-500 ease-in-out hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)]
             ${
-              !isFirstSectionComplete
+              !isSection2Active
                 ? "opacity-50 pointer-events-none"
                 : "opacity-100"
             }`}
@@ -140,18 +186,18 @@ export default function QuotePage() {
             </label>
             <textarea
               {...register("serviceDetails", {
-                required: isFirstSectionComplete
+                required: isSection2Active
                   ? "프로젝트 내용을 입력해주세요"
                   : false,
               })}
               id="serviceDetails"
               rows={6}
-              disabled={!isFirstSectionComplete}
+              disabled={!isSection2Active}
               className="w-full px-4 py-3 border border-gray-200 rounded-lg transition-all duration-300
                 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
                 hover:border-gray-300 disabled:hover:border-gray-200"
               placeholder={
-                isFirstSectionComplete
+                isSection2Active
                   ? "프로젝트에 대해 자세히 설명해주세요"
                   : "담당자 정보를 먼저 입력해주세요"
               }
@@ -167,11 +213,11 @@ export default function QuotePage() {
         <div className="text-center pt-4">
           <button
             type="submit"
-            disabled={!isFirstSectionComplete}
+            disabled={!isSection2Active}
             className={`w-full px-8 py-4 rounded-xl font-medium text-base transition-all duration-300
               shadow-[0_4px_12px_rgba(0,0,0,0.1)]
               ${
-                isFirstSectionComplete
+                isSection2Active
                   ? "bg-blue-600 text-white hover:bg-blue-700 hover:shadow-[0_4px_16px_rgba(37,99,235,0.2)]"
                   : "bg-gray-100 text-gray-400 cursor-not-allowed"
               }`}
