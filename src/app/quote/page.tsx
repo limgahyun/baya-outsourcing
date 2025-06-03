@@ -90,7 +90,7 @@ export default function QuotePage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16 max-w-2xl">
+    <div className="container mx-auto px-4 py-16 max-w-4xl">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-gmarket font-bold mb-4">뚝딱 견적소</h1>
         <p className="text-xl text-gray-600">
