@@ -1,35 +1,25 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SERVICE_TYPES } from "@/constants/serviceTypes";
 import { FUNCTION_CARDS } from "@/constants/functionCards";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 import { quoteApi, QuoteResponse } from "@/services/api";
 
 type Props = {
-  params: {
-    id: number;
-  };
+  params: Promise<{
+    id: string;
+  }>;
 };
 
-export default function QuoteResultPage({ params }: Props) {
-  const [quoteData, setQuoteData] = useState<QuoteResponse | null>(null);
+export default async function QuoteResultPage({ params }: Props) {
+  let quoteData: QuoteResponse;
 
-  // TODO: Replace with actual API call
-  useEffect(() => {
-    // Simulated API response for now
-    const fetchQuoteData = async () => {
-      try {
-        const response = await quoteApi.getQuoteResultById(params.id);
-        console.log("Quote data:", response);
-        setQuoteData(response);
-      } catch (error) {
-        console.error("Failed to get quote data:", error);
-      }
-    };
-
-    fetchQuoteData();
-  }, [params.id]); // Add params.id as dependency
+  try {
+    const resolvedParams = await params;
+    quoteData = await quoteApi.getQuoteResultById(Number(resolvedParams.id));
+  } catch (error) {
+    console.error("Failed to get quote data:", error);
+    return <div>Failed to load quote data</div>;
+  }
 
   const formatNumber = (num: number) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
