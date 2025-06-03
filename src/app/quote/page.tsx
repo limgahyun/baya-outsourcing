@@ -6,6 +6,7 @@ import { SERVICE_TYPES } from "@/constants/serviceTypes";
 import { FUNCTION_CARDS } from "@/constants/functionCards";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 import { getYesterdayDate } from "@/utils/formatDate";
+import { quoteApi } from "@/services/api";
 
 type QuoteFormData = {
   name: string;
@@ -16,6 +17,8 @@ type QuoteFormData = {
 };
 
 export default function QuotePage() {
+  const [userId, setUserId] = useState<number | null>(null);
+  const [quoteId, setQuoteId] = useState<number | null>(null);
   const [isSection2Active, setIsSection2Active] = useState(false);
   const [functionList, setFunctionList] = useState<number[]>([]);
   const [isServiceTypeOpen, setIsServiceTypeOpen] = useState(false);
@@ -44,8 +47,21 @@ export default function QuotePage() {
     phone?.trim() !== "" &&
     /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/.test(phone);
 
-  const handleArrowClick = () => {
+  const handleArrowClick = async () => {
     if (isFirstSectionComplete) {
+      try {
+        const userData = {
+          name: name,
+          phoneNum: phone,
+        };
+
+        const response = await quoteApi.createUser(userData);
+        console.log("User created:", response);
+        setUserId(response.id);
+      } catch (error) {
+        console.error("Failed to create user:", error);
+      }
+
       setIsSection2Active(true);
       // Smooth scroll to section 2 with offset for better visibility
       const section2 = document.getElementById("section2");
@@ -74,7 +90,7 @@ export default function QuotePage() {
   const selectedServiceType = watch("serviceType");
 
   const handleServiceTypeSelect = (type: (typeof SERVICE_TYPES)[0]) => {
-    setValue("serviceType", type.name);
+    setValue("serviceType", type.id);
     setIsServiceTypeOpen(false);
   };
 
@@ -84,8 +100,23 @@ export default function QuotePage() {
     setValue("phone", formattedValue, { shouldValidate: true });
   };
 
-  const onSubmit = (data: QuoteFormData) => {
+  const onSubmit = async (data: QuoteFormData) => {
     console.log(data);
+    try {
+      const quoteData = {
+        user_id: userId || 0,
+        serviceType: data.serviceType,
+        adminRequired: data.adminRequired,
+        functionList: functionList,
+      };
+
+      const response = await quoteApi.createQuoteInfo(quoteData);
+      console.log("Quote created:", response);
+      setQuoteId(response.id);
+      console.log("Quote ID:", quoteId);
+    } catch (error) {
+      console.error("Failed to create quote:", error);
+    }
     // Handle form submission
   };
 

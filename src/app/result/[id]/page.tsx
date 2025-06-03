@@ -4,43 +4,7 @@ import React, { useEffect, useState } from "react";
 import { SERVICE_TYPES } from "@/constants/serviceTypes";
 import { FUNCTION_CARDS } from "@/constants/functionCards";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
-
-type QuoteResponse = {
-  user: {
-    id: number;
-    created_at: number;
-    name: string;
-    phoneNum: string;
-  };
-  quoteInfo: {
-    id: number;
-    created_at: number;
-    user_id: number;
-    serviceType: string;
-    adminRequired: boolean;
-    functionList: number[];
-  };
-  result: {
-    id: number;
-    created_at: number;
-    quoteinfo_id: number;
-    expenses: number;
-    period: number;
-    functionNum: number;
-    pmTime: number;
-    designTime: number;
-    feTime: number;
-    beTime: number;
-    level: number;
-    personnelExpenses: number;
-  };
-  wage: {
-    pmWage: string;
-    designWage: string;
-    feWage: string;
-    beWage: string;
-  };
-};
+import { quoteApi, QuoteResponse } from "@/services/api";
 
 type Props = {
   params: {
@@ -50,68 +14,56 @@ type Props = {
 
 export default function QuoteResultPage({ params }: Props) {
   const [quoteData, setQuoteData] = useState<QuoteResponse | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // TODO: Replace with actual API call
   useEffect(() => {
-    // Simulated API response for now
     const fetchQuoteData = async () => {
       try {
-        // TODO: Replace with actual API endpoint
-        // const response = await fetch(`/api/quotes/${params.id}`);
-        // const data = await response.json();
-
-        // Simulated API response
-        const mockData: QuoteResponse = {
-          user: {
-            id: 1,
-            created_at: 1746083632203,
-            name: "임가현",
-            phoneNum: "01047176897",
-          },
-          quoteInfo: {
-            id: params.id, // Use the route parameter
-            created_at: 1746167726648,
-            user_id: 1,
-            serviceType: "COMMERCE",
-            adminRequired: true,
-            functionList: [1, 3, 4, 12, 30],
-          },
-          result: {
-            id: params.id, // Use the route parameter
-            created_at: 1746167726801,
-            quoteinfo_id: params.id, // Use the route parameter
-            expenses: 2039400,
-            period: 17,
-            functionNum: 5,
-            pmTime: 6.5,
-            designTime: 4,
-            feTime: 5,
-            beTime: 7.5,
-            level: 1.1,
-            personnelExpenses: 2039400,
-          },
-          wage: {
-            pmWage: "40000",
-            designWage: "38000",
-            feWage: "40000",
-            beWage: "42000",
-          },
-        };
-        setQuoteData(mockData);
-      } catch (error) {
-        console.error("Failed to fetch quote data:", error);
-        // TODO: Handle error state
+        setIsLoading(true);
+        const data = await quoteApi.getQuoteById(params.id);
+        setQuoteData(data);
+        setError(null);
+      } catch (err) {
+        console.error("Failed to fetch quote data:", err);
+        setError("견적 정보를 불러오는데 실패했습니다. 다시 시도해 주세요.");
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchQuoteData();
-  }, [params.id]); // Add params.id as dependency
+  }, [params.id]);
 
   const formatNumber = (num: number) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  if (!quoteData) return <div>Loading...</div>;
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <p className="text-red-500 mb-4">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+          >
+            다시 시도
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!quoteData) return null;
 
   const selectedFunctions = FUNCTION_CARDS.filter((card) =>
     quoteData.quoteInfo.functionList.includes(card.id)
