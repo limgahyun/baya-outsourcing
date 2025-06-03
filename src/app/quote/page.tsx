@@ -5,6 +5,7 @@ import { useForm, useWatch } from "react-hook-form";
 import { SERVICE_TYPES } from "@/constants/serviceTypes";
 import { FUNCTION_CARDS } from "@/constants/functionCards";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
+import { getYesterdayDate } from "@/utils/formatDate";
 
 type QuoteFormData = {
   name: string;
@@ -492,6 +493,12 @@ export default function QuotePage() {
           </button>
         </div>
       </form>
+
+      <div className="text-center mt-8">
+        <p className="text-sm text-gray-300">
+          🚨 {getYesterdayDate()} 에 업데이트된 견적 기준을 적용합니다
+        </p>
+      </div>
     </div>
   );
 }
