@@ -3,6 +3,7 @@ import { SERVICE_TYPES } from "@/constants/serviceTypes";
 import { FUNCTION_CARDS } from "@/constants/functionCards";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 import { quoteApi, QuoteResponse } from "@/services/api";
+import DownloadSection from "@/components/quote/DownloadSection";
 
 type Props = {
   params: Promise<{
@@ -12,9 +13,9 @@ type Props = {
 
 export default async function QuoteResultPage({ params }: Props) {
   let quoteData: QuoteResponse;
+  const resolvedParams = await params;
 
   try {
-    const resolvedParams = await params;
     quoteData = await quoteApi.getQuoteResultById(Number(resolvedParams.id));
   } catch (error) {
     console.error("Failed to get quote data:", error);
@@ -352,6 +353,9 @@ export default async function QuoteResultPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Download Section */}
+      <DownloadSection quoteId={resolvedParams.id} />
 
       <div className="text-center mt-8">
         <p className="text-sm text-gray-300">
