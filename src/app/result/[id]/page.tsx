@@ -202,11 +202,12 @@ export default function QuoteResultPage({ params }: Props) {
             <div className="relative pb-8">
               {/* X-axis labels */}
               <div className="absolute -bottom-6 left-24 right-0 flex justify-between text-sm text-gray-500">
-                <span>0일</span>
-                <span>5일</span>
-                <span>10일</span>
-                <span>15일</span>
-                <span>20일</span>
+                {Array.from(
+                  { length: Math.ceil(quoteData.result.period / 10) * 2 + 1 },
+                  (_, i) => (
+                    <span key={i}>{i * 5}일</span>
+                  )
+                )}
               </div>
 
               {/* Bars */}
