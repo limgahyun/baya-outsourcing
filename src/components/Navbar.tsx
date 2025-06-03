@@ -29,7 +29,7 @@ export default function Navbar() {
             {/* Desktop Navigation Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <Link
-                href="/coming-soon"
+                href="/quote"
                 className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors break-keep"
               >
                 뚝딱 견적소
