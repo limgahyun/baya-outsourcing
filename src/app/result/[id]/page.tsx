@@ -55,7 +55,7 @@ export default async function QuoteResultPage({ params }: Props) {
             <h3 className="text-lg font-bold text-gray-900 mb-4">
               담당자 정보
             </h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
               <div>
                 <p className="text-sm text-gray-500">담당자 이름</p>
                 <p className="text-base text-gray-900">{quoteData.user.name}</p>
@@ -108,32 +108,7 @@ export default async function QuoteResultPage({ params }: Props) {
       {/* Result Section */}
 
       {/* Summary Cards */}
-      <section className="grid grid-cols-3 gap-6">
-        {/* Expected Cost */}
-        <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
-          <div className="flex items-center gap-2 mb-2">
-            <svg
-              className="w-5 h-5 text-blue-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <span className="text-sm font-medium text-gray-600">예상 견적</span>
-          </div>
-          <div className="text-2xl font-bold text-gray-900">
-            {formatNumber(quoteData.result.expenses)}
-            <span className="text-base font-normal"> 원</span>
-          </div>
-          <p className="text-xs text-gray-500 mt-1">VAT 별도</p>
-        </div>
-
+      <section className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
         {/* Expected Period */}
         <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
           <div className="flex items-center gap-2 mb-2">
@@ -184,6 +159,31 @@ export default async function QuoteResultPage({ params }: Props) {
             PM, 백엔드, 프론트엔드, 디자이너
           </p>
         </div>
+
+        {/* Expected Cost */}
+        <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative sm:col-span-2 md:col-span-1">
+          <div className="flex items-center gap-2 mb-2">
+            <svg
+              className="w-5 h-5 text-blue-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span className="text-sm font-medium text-gray-600">예상 견적</span>
+          </div>
+          <div className="text-2xl font-bold text-gray-900">
+            {formatNumber(quoteData.result.expenses)}
+            <span className="text-base font-normal"> 원</span>
+          </div>
+          <p className="text-xs text-gray-500 mt-1">VAT 별도</p>
+        </div>
       </section>
 
       <section className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
@@ -192,9 +192,9 @@ export default async function QuoteResultPage({ params }: Props) {
           <h3 className="text-lg font-bold text-gray-900 mb-4">개발 일정</h3>
           <div className="space-y-4">
             {/* Bar Chart */}
-            <div className="relative pb-8">
+            <div className="relative sm:pb-8">
               {/* X-axis labels */}
-              <div className="absolute -bottom-6 left-24 right-0 flex justify-between text-sm text-gray-500">
+              <div className="hidden absolute -bottom-6 left-24 right-0 sm:flex justify-between text-sm text-gray-500">
                 {Array.from(
                   { length: Math.ceil(quoteData.result.period / 10) * 2 + 1 },
                   (_, i) => (
@@ -207,7 +207,9 @@ export default async function QuoteResultPage({ params }: Props) {
               <div className="space-y-3">
                 {/* Planning */}
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-gray-600">기획</span>
+                  <span className="w-12 sm:w-24 text-sm text-gray-600">
+                    기획
+                  </span>
                   <div className="flex-1 h-8 bg-gray-50 rounded-lg overflow-hidden relative">
                     <div
                       className="h-full bg-red-300 rounded-lg absolute"
@@ -223,7 +225,9 @@ export default async function QuoteResultPage({ params }: Props) {
 
                 {/* Design */}
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-gray-600">디자인</span>
+                  <span className="w-12 sm:w-24 text-sm text-gray-600">
+                    디자인
+                  </span>
                   <div className="flex-1 h-8 bg-gray-50 rounded-lg overflow-hidden relative">
                     <div
                       className="h-full bg-yellow-300 rounded-lg absolute"
@@ -242,7 +246,7 @@ export default async function QuoteResultPage({ params }: Props) {
 
                 {/* Frontend */}
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-gray-600">FE</span>
+                  <span className="w-12 sm:w-24 text-sm text-gray-600">FE</span>
                   <div className="flex-1 h-8 bg-gray-50 rounded-lg overflow-hidden relative">
                     <div
                       className="h-full bg-blue-300 rounded-lg absolute"
@@ -264,7 +268,7 @@ export default async function QuoteResultPage({ params }: Props) {
 
                 {/* Backend */}
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-sm text-gray-600">BE</span>
+                  <span className="w-12 sm:w-24 text-sm text-gray-600">BE</span>
                   <div className="flex-1 h-8 bg-gray-50 rounded-lg overflow-hidden relative">
                     <div
                       className="h-full bg-green-400 rounded-lg absolute"
