@@ -7,6 +7,7 @@ import { FUNCTION_CARDS } from "@/constants/functionCards";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 import { getYesterdayDate } from "@/utils/formatDate";
 import { quoteApi } from "@/services/api";
+import { useRouter } from "next/navigation";
 
 type QuoteFormData = {
   name: string;
@@ -17,8 +18,8 @@ type QuoteFormData = {
 };
 
 export default function QuotePage() {
+  const router = useRouter();
   const [userId, setUserId] = useState<number | null>(null);
-  const [quoteId, setQuoteId] = useState<number | null>(null);
   const [isSection2Active, setIsSection2Active] = useState(false);
   const [functionList, setFunctionList] = useState<number[]>([]);
   const [isServiceTypeOpen, setIsServiceTypeOpen] = useState(false);
@@ -112,12 +113,12 @@ export default function QuotePage() {
 
       const response = await quoteApi.createQuoteInfo(quoteData);
       console.log("Quote created:", response);
-      setQuoteId(response.id);
-      console.log("Quote ID:", quoteId);
+
+      // Redirect to result page
+      router.push(`/result/${response.quoteResultId}`);
     } catch (error) {
       console.error("Failed to create quote:", error);
     }
-    // Handle form submission
   };
 
   return (

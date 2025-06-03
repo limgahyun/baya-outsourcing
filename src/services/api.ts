@@ -54,12 +54,15 @@ export interface CreateQuoteInfoRequest {
 }
 
 export interface CreateQuoteInfoResponse {
-  id: number;
-  created_at: number;
-  user_id: number;
-  serviceType: string;
-  adminRequired: boolean;
-  functionList: number[];
+  quoteInfo: {
+    id: number;
+    created_at: number;
+    user_id: number;
+    serviceType: string;
+    adminRequired: boolean;
+    functionList: number[];
+  };
+  quoteResultId: number;
 }
 
 export interface CreateUserRequest {
