@@ -379,33 +379,59 @@ export default function QuoteResultPage({ params }: Props) {
           </h3>
           <div className="space-y-3">
             <div className="flex justify-between items-center py-2">
-              <span className="text-gray-600">기획 및 디자인</span>
+              <span className="text-gray-600">기획</span>
               <span className="text-gray-900 font-medium">
-                {formatNumber(700)}만원
+                {formatNumber(
+                  quoteData.result.pmTime * parseInt(quoteData.wage.pmWage, 10)
+                )}{" "}
+                원
+              </span>
+            </div>
+            <div className="flex justify-between items-center py-2">
+              <span className="text-gray-600">디자인</span>
+              <span className="text-gray-900 font-medium">
+                {formatNumber(
+                  quoteData.result.designTime *
+                    parseInt(quoteData.wage.designWage, 10)
+                )}{" "}
+                원
               </span>
             </div>
             <div className="flex justify-between items-center py-2">
               <span className="text-gray-600">프론트엔드 개발</span>
               <span className="text-gray-900 font-medium">
-                {formatNumber(800)}만원
+                {formatNumber(
+                  quoteData.result.feTime * parseInt(quoteData.wage.feWage, 10)
+                )}{" "}
+                원
               </span>
             </div>
             <div className="flex justify-between items-center py-2">
               <span className="text-gray-600">백엔드 개발</span>
               <span className="text-gray-900 font-medium">
-                {formatNumber(800)}만원
+                {formatNumber(
+                  quoteData.result.beTime * parseInt(quoteData.wage.beWage, 10)
+                )}{" "}
+                원
+              </span>
+            </div>
+            <div className="border-t border-gray-100 border-dashed mt-2" />
+            <div className="flex justify-between items-center py-2">
+              <span className="text-gray-600">레벨 가중치</span>
+              <span className="text-gray-900 font-medium">
+                * {quoteData.result.level.toFixed(1)}
               </span>
             </div>
             <div className="flex justify-between items-center py-2">
-              <span className="text-gray-600">테스트 및 배포</span>
+              <span className="text-gray-600">어드민 가중치</span>
               <span className="text-gray-900 font-medium">
-                {formatNumber(200)}만원
+                * {quoteData.quoteInfo.adminRequired ? "2" : "1"}
               </span>
             </div>
             <div className="flex justify-between items-center py-2 border-t border-gray-200 mt-2">
               <span className="text-gray-900 font-bold">총 견적</span>
               <span className="text-blue-600 font-bold">
-                {formatNumber(2500)}만원
+                {formatNumber(quoteData.result.expenses)} 원
               </span>
             </div>
           </div>
