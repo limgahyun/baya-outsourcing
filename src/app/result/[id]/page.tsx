@@ -14,56 +14,28 @@ type Props = {
 
 export default function QuoteResultPage({ params }: Props) {
   const [quoteData, setQuoteData] = useState<QuoteResponse | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
+  // TODO: Replace with actual API call
   useEffect(() => {
+    // Simulated API response for now
     const fetchQuoteData = async () => {
       try {
-        setIsLoading(true);
-        const data = await quoteApi.getQuoteById(params.id);
-        setQuoteData(data);
-        setError(null);
-      } catch (err) {
-        console.error("Failed to fetch quote data:", err);
-        setError("견적 정보를 불러오는데 실패했습니다. 다시 시도해 주세요.");
-      } finally {
-        setIsLoading(false);
+        const response = await quoteApi.getQuoteResultById(params.id);
+        console.log("Quote data:", response);
+        setQuoteData(response);
+      } catch (error) {
+        console.error("Failed to get quote data:", error);
       }
     };
 
     fetchQuoteData();
-  }, [params.id]);
+  }, [params.id]); // Add params.id as dependency
 
   const formatNumber = (num: number) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <p className="text-red-500 mb-4">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-          >
-            다시 시도
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  if (!quoteData) return null;
+  if (!quoteData) return <div>Loading...</div>;
 
   const selectedFunctions = FUNCTION_CARDS.filter((card) =>
     quoteData.quoteInfo.functionList.includes(card.id)

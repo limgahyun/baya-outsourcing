@@ -76,9 +76,9 @@ export interface CreateUserResponse {
 
 export const quoteApi = {
   // Get quote result by ID
-  getQuoteById: async (id: number): Promise<QuoteResponse> => {
+  getQuoteResultById: async (id: number): Promise<QuoteResponse> => {
     try {
-      const response = await api.get(`/quote/${id}`);
+      const response = await api.get(`/quoteresult/${id}`);
       return response.data;
     } catch (error) {
       console.error("Error fetching quote:", error);
