@@ -84,10 +84,13 @@ export default function DownloadSection({ quoteId }: Props) {
   };
 
   return (
-    <div id="download-section" className="flex flex-col sm:flex-row gap-4">
+    <div
+      id="download-section"
+      className="flex flex-col sm:flex-row gap-4 sw-auto"
+    >
       <button
         onClick={handleDownloadPDF}
-        className="flex items-center justify-center gap-2 px-6 py-3 bg-[#444] text-white rounded-xl hover:bg-[#333] transition-colors duration-200"
+        className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 text-white rounded-xl hover:bg-gray-900 transition-colors duration-200 sm:w-[190px]"
       >
         <svg
           className="w-5 h-5"
