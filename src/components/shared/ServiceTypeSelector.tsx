@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { SERVICE_TYPES, ServiceType } from "@/constants/serviceTypes";
 import {
@@ -163,6 +165,37 @@ export default function ServiceTypeSelector<TFormValues extends FieldValues>({
         />
       </div>
       {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+
+      {/* Service Type Description */}
+      <div className="">
+        {selectedType && !isOpen && (
+          <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg animate-fadeIn">
+            <div className="flex-shrink-0 w-5 h-5 mt-0.5">
+              <svg
+                className="w-5 h-5 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d={
+                    SERVICE_TYPES.find((type) => type.name === selectedType)
+                      ?.icon || SERVICE_TYPES[6].icon
+                  }
+                />
+              </svg>
+            </div>
+            <p className="text-sm text-gray-600">
+              {SERVICE_TYPES.find((type) => type.name === selectedType)
+                ?.description ||
+                "선택하신 서비스에 대해 맞춤형 견적을 제공해드립니다."}
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

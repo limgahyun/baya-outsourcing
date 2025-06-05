@@ -4,6 +4,7 @@ import { FUNCTION_CARDS } from "@/constants/functionCards";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 import { quoteApi, QuoteResponse } from "@/services/api";
 import DownloadSection from "@/components/quote/DownloadSection";
+import ProjectInquiryButton from "@/components/shared/ProjectInquiryButton";
 
 type Props = {
   params: Promise<{
@@ -35,6 +36,8 @@ export default async function QuoteResultPage({ params }: Props) {
   const serviceName =
     SERVICE_TYPES.find((type) => type.id === quoteData.quoteInfo.serviceType)
       ?.name || quoteData.quoteInfo.serviceType;
+
+  const barLength = Math.ceil(quoteData.result.period / 10) * 2 + 1;
 
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl space-y-6">
@@ -195,12 +198,9 @@ export default async function QuoteResultPage({ params }: Props) {
             <div className="relative sm:pb-8">
               {/* X-axis labels */}
               <div className="hidden absolute -bottom-6 left-24 right-0 sm:flex justify-between text-sm text-gray-500">
-                {Array.from(
-                  { length: Math.ceil(quoteData.result.period / 10) * 2 + 1 },
-                  (_, i) => (
-                    <span key={i}>{i * 5}일</span>
-                  )
-                )}
+                {Array.from({ length: barLength }, (_, i) => (
+                  <span key={i}>{i * 5}일</span>
+                ))}
               </div>
 
               {/* Bars */}
@@ -363,14 +363,7 @@ export default async function QuoteResultPage({ params }: Props) {
       {/* Download Section */}
       <section className="flex flex-col sm:flex-row gap-4">
         <DownloadSection quoteId={resolvedParams.id} />
-        <button
-          className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors duration-200 w-full"
-          onClick={() => {
-            window.open("https://tally.so/r/mVyWdy", "_blank");
-          }}
-        >
-          이 견적으로 프로젝트 문의하기
-        </button>
+        <ProjectInquiryButton />
       </section>
 
       <div className="text-center mt-8">
