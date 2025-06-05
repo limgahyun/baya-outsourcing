@@ -10,6 +10,7 @@ import { QuoteFormData } from "@/types/form";
 import ContactForm from "@/components/shared/ContactForm";
 import ServiceTypeSelector from "@/components/shared/ServiceTypeSelector";
 import { DynamicIcon, ChevronDownIcon } from "@/components/icons";
+import PageLayout from "@/components/shared/PageLayout";
 
 interface FunctionCardProps {
   func: (typeof FUNCTION_CARDS)[0];
@@ -125,14 +126,11 @@ export default function QuotePage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16 max-w-4xl">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-gmarket font-bold mb-4">바야 견적소</h1>
-        <p className="text-xl text-gray-600">
-          10초만에 내 프로젝트 견적 확인하기
-        </p>
-      </div>
-
+    <PageLayout
+      title="바야 견적소"
+      subtitle="10초만에 내 프로젝트 견적 확인하기"
+      footerText={`🚨 ${getYesterdayDate()} 에 업데이트된 견적 기준을 적용합니다`}
+    >
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {/* Contact Person Information Section */}
         <section className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
@@ -270,12 +268,6 @@ export default function QuotePage() {
           </button>
         </div>
       </form>
-
-      <div className="text-center mt-8">
-        <p className="text-sm text-gray-300">
-          🚨 {getYesterdayDate()} 에 업데이트된 견적 기준을 적용합니다
-        </p>
-      </div>
-    </div>
+    </PageLayout>
   );
 }

@@ -26,6 +26,7 @@ export default function InquiryPage() {
     <PageLayout
       title="프로젝트 문의하기"
       subtitle="보다 꼼꼼한 상담을 위해 프로젝트의 정보를 알려주세요."
+      footerText="🚨 문의하신 내용은 영업일 기준 1-2일 내로 답변드리겠습니다."
     >
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         <section className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
@@ -94,10 +95,17 @@ export default function InquiryPage() {
           </div>
         </section>
 
-        <div className="flex justify-center">
+        <div className="text-center pt-4">
           <button
             type="submit"
-            className="px-8 py-4 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors duration-200 font-medium text-lg"
+            disabled={false}
+            className={`w-full px-8 py-4 rounded-xl font-medium text-base transition-all duration-300
+              shadow-[0_4px_12px_rgba(0,0,0,0.1)]
+              ${
+                false
+                  ? "bg-blue-600 text-white hover:bg-blue-700 hover:shadow-[0_4px_16px_rgba(37,99,235,0.2)]"
+                  : "bg-gray-100 text-gray-400 cursor-not-allowed"
+              }`}
           >
             문의하기
           </button>

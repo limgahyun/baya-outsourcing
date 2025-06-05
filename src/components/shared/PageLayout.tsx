@@ -11,7 +11,7 @@ export default function PageLayout({
   title,
   subtitle,
   children,
-  footerText = "문의하신 내용은 영업일 기준 1-2일 내로 답변드리겠습니다.",
+  footerText,
 }: PageLayoutProps) {
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl space-y-6">
