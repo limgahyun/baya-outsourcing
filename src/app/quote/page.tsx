@@ -163,7 +163,7 @@ export default function QuotePage() {
             <ChevronDownIcon
               className={`transition-transform duration-300 ${
                 isFirstSectionComplete ? "text-white" : "text-gray-400"
-              }`}
+              } h-6 w-6`}
             />
           </div>
         </section>
