@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import PageLayout from "@/components/shared/PageLayout";
 import ContactForm from "@/components/shared/ContactForm";
@@ -32,9 +32,9 @@ export default function InquiryPage() {
   } = form;
 
   // Track if user came from quote result
-  const [hasQuoteData, setHasQuoteData] = React.useState(false);
-  const [isActive, setIsActive] = React.useState(false);
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [hasQuoteData, setHasQuoteData] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Watch required fields
   const name = watch("name");
@@ -45,7 +45,7 @@ export default function InquiryPage() {
   const description = watch("description");
 
   // Update isActive when required fields change
-  React.useEffect(() => {
+  useEffect(() => {
     const isValidPhoneNum = /^[0-9]{3}-[0-9]{4}-[0-9]{4}$/.test(phoneNum || "");
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email || "");
 
@@ -61,7 +61,7 @@ export default function InquiryPage() {
   }, [name, phoneNum, email, serviceName, serviceType, description]);
 
   // Load stored quote data on mount
-  React.useEffect(() => {
+  useEffect(() => {
     const storedData = sessionStorage.getItem("quoteInquiryData");
     if (storedData) {
       const data = JSON.parse(storedData);

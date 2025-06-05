@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { FUNCTION_CARDS } from "@/constants/functionCards";
 import { getYesterdayDate } from "@/utils/formatDate";
@@ -46,6 +46,7 @@ export default function QuotePage() {
   const router = useRouter();
   const [userId, setUserId] = useState<number | null>(null);
   const [isSection2Active, setIsSection2Active] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [functionList, setFunctionList] = useState<number[]>([]);
 
   const form = useForm<QuoteFormData>();
@@ -59,11 +60,24 @@ export default function QuotePage() {
 
   const name = watch("name");
   const phoneNum = watch("phoneNum");
+  const adminRequired = watch("adminRequired");
+  const serviceType = watch("serviceType");
 
   const isFirstSectionComplete =
     name?.trim() !== "" &&
     phoneNum?.trim() !== "" &&
     /^[0-9]{3}-[0-9]{4}-[0-9]{4}$/.test(phoneNum);
+
+  useEffect(() => {
+    setIsActive(
+      !(
+        isFirstSectionComplete &&
+        serviceType?.trim() !== "" &&
+        adminRequired !== undefined &&
+        functionList.length > 0
+      )
+    );
+  }, [isFirstSectionComplete, serviceType, adminRequired, functionList.length]);
 
   const handleArrowClick = async () => {
     if (isFirstSectionComplete) {
@@ -255,11 +269,11 @@ export default function QuotePage() {
         <div className="text-center pt-4">
           <button
             type="submit"
-            disabled={!isSection2Active}
+            disabled={isActive}
             className={`w-full px-8 py-4 rounded-xl font-medium text-base transition-all duration-300
               shadow-[0_4px_12px_rgba(0,0,0,0.1)]
               ${
-                isSection2Active
+                isActive
                   ? "bg-blue-600 text-white hover:bg-blue-700 hover:shadow-[0_4px_16px_rgba(37,99,235,0.2)]"
                   : "bg-gray-100 text-gray-400 cursor-not-allowed"
               }`}
