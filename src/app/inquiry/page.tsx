@@ -214,7 +214,7 @@ export default function InquiryPage() {
                 required
                 register={register}
                 error={errors.description?.message as string}
-                placeholder="어떤 프로젝트인지 설명해주세요. 알잘딱깔센으로 알아들을게요."
+                placeholder="어떤 프로젝트인지 편하게 설명해주세요. 알잘딱깔센으로 알아들을게요."
               />
               <FormInput<ExtendedInquiryFormData>
                 id="detail"
