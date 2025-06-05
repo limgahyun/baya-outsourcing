@@ -22,3 +22,8 @@ export const formatPhoneNumber = (value: string): string => {
     )}`;
   }
 };
+
+export const isValidPhoneNumber = (value: string): boolean => {
+  const numbers = value.replace(/[^\d]/g, "");
+  return numbers.length === 11;
+};
