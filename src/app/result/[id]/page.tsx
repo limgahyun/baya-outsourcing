@@ -37,7 +37,11 @@ export default async function QuoteResultPage({ params }: Props) {
     SERVICE_TYPES.find((type) => type.id === quoteData.quoteInfo.serviceType)
       ?.name || quoteData.quoteInfo.serviceType;
 
-  const barLength = Math.ceil(quoteData.result.period / 10) * 2 + 1;
+  const numForBarLength = Math.ceil(quoteData.result.period / 10) * 2 + 1;
+  const barLength = (numForBarLength - 1) * 5;
+  const dayForFuctions = quoteData.quoteInfo.adminRequired
+    ? quoteData.quoteInfo.functionList.length * 2
+    : quoteData.quoteInfo.functionList.length;
 
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl space-y-6">
@@ -198,7 +202,7 @@ export default async function QuoteResultPage({ params }: Props) {
             <div className="relative sm:pb-8">
               {/* X-axis labels */}
               <div className="hidden absolute -bottom-6 left-24 right-0 sm:flex justify-between text-sm text-gray-500">
-                {Array.from({ length: barLength }, (_, i) => (
+                {Array.from({ length: numForBarLength }, (_, i) => (
                   <span key={i}>{i * 5}일</span>
                 ))}
               </div>
@@ -215,9 +219,7 @@ export default async function QuoteResultPage({ params }: Props) {
                       className="h-full bg-red-300 rounded-lg absolute"
                       style={{
                         left: "0%",
-                        width: `${
-                          (quoteData.quoteInfo.functionList.length / 20) * 100
-                        }%`,
+                        width: `${(dayForFuctions / barLength) * 100}%`,
                       }}
                     ></div>
                   </div>
@@ -232,13 +234,8 @@ export default async function QuoteResultPage({ params }: Props) {
                     <div
                       className="h-full bg-yellow-300 rounded-lg absolute"
                       style={{
-                        left: `${
-                          (quoteData.quoteInfo.functionList.length / 2 / 20) *
-                          100
-                        }%`,
-                        width: `${
-                          (quoteData.quoteInfo.functionList.length / 20) * 100
-                        }%`,
+                        left: `${(dayForFuctions / 2 / barLength) * 100}%`,
+                        width: `${(dayForFuctions / barLength) * 100}%`,
                       }}
                     ></div>
                   </div>
@@ -251,16 +248,8 @@ export default async function QuoteResultPage({ params }: Props) {
                     <div
                       className="h-full bg-blue-300 rounded-lg absolute"
                       style={{
-                        left: `${
-                          ((quoteData.quoteInfo.functionList.length * 1.5) /
-                            20) *
-                          100
-                        }%`,
-                        width: `${
-                          ((quoteData.quoteInfo.functionList.length * 1.5) /
-                            20) *
-                          100
-                        }%`,
+                        left: `${((dayForFuctions * 1.5) / barLength) * 100}%`,
+                        width: `${((dayForFuctions * 1.5) / barLength) * 100}%`,
                       }}
                     ></div>
                   </div>
@@ -273,15 +262,9 @@ export default async function QuoteResultPage({ params }: Props) {
                     <div
                       className="h-full bg-green-400 rounded-lg absolute"
                       style={{
-                        left: `${
-                          ((quoteData.quoteInfo.functionList.length * 1.5) /
-                            20) *
-                          100
-                        }%`,
+                        left: `${((dayForFuctions * 1.5) / barLength) * 100}%`,
                         width: `${
-                          ((2 + quoteData.quoteInfo.functionList.length * 1.5) /
-                            20) *
-                          100
+                          ((2 + dayForFuctions * 1.5) / barLength) * 100
                         }%`,
                       }}
                     ></div>
