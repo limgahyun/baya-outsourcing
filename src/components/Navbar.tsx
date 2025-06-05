@@ -52,9 +52,7 @@ export default function Navbar() {
 
             {/* Desktop CTA Button */}
             <Link
-              href="https://tally.so/r/mVyWdy"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/inquiry"
               className="hidden md:block bg-blue-1000 text-white px-6 py-3 rounded-lg font-pretendard font-medium hover:bg-blue-900 transition-all duration-300 hover:shadow-lg break-keep"
             >
               프로젝트 문의하기
@@ -120,9 +118,7 @@ export default function Navbar() {
               블로그
             </Link>
             <Link
-              href="https://tally.so/r/mVyWdy"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/inquiry"
               className="hidden md:block bg-blue-1000 text-white px-6 py-3 rounded-lg font-pretendard font-medium hover:bg-blue-900 transition-all duration-300 hover:shadow-lg break-keep"
               onClick={() => setIsMenuOpen(false)}
             >

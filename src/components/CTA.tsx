@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function CTA() {
+  const router = useRouter();
   return (
     <section className="relative h-[400px] overflow-hidden">
       {/* Background Image */}
@@ -27,7 +29,7 @@ export default function CTA() {
 
           <button
             onClick={() => {
-              window.open("https://tally.so/r/mVyWdy", "_blank");
+              router.push("/inquiry");
             }}
             className="bg-white hover:bg-gray-200 text-blue-1000 px-8 py-3 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg text-lg break-keep"
           >

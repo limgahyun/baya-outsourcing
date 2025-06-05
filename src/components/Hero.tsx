@@ -1,8 +1,10 @@
 "use client";
 
 import { ArrowDownIcon } from "@/components/icons";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const router = useRouter();
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Video Background */}
@@ -38,7 +40,7 @@ export default function Hero() {
             </div>
             <button
               onClick={() => {
-                window.open("https://tally.so/r/mVyWdy", "_blank");
+                router.push("/inquiry");
               }}
               className="bg-white hover:bg-gray-200 text-blue-1000 px-8 py-3 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg text-lg break-keep"
             >
