@@ -9,7 +9,7 @@ import {
 type FormInputProps<TFormValues extends FieldValues> = {
   id: Path<TFormValues>;
   label: string;
-  type?: "text" | "tel" | "email" | "textarea";
+  type?: "text" | "tel" | "email" | "textarea" | "file";
   placeholder?: string;
   required?: boolean;
   register: UseFormRegister<TFormValues>;

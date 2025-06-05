@@ -24,29 +24,21 @@ export default function InquiryPage() {
 
   return (
     <PageLayout
-      title="서비스 문의하기"
-      subtitle="보다 꼼꼼한 상담을 위해 서비스의 정보를 알려주세요."
+      title="프로젝트 문의하기"
+      subtitle="보다 꼼꼼한 상담을 위해 프로젝트의 정보를 알려주세요."
     >
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         <section className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
-          <h2 className="text-lg font-bold text-gray-900 mb-4">
-            서비스 정보 입력
-          </h2>
           <div className="space-y-6">
             <FormInput<InquiryFormData>
               id="serviceName"
-              label="서비스명"
+              label="프로젝트명"
               type="text"
               register={register}
               error={errors.serviceName?.message as string}
-              placeholder="서비스명을 입력하세요"
+              placeholder="프로젝트명을 입력하세요"
             />
             <ContactForm form={form} />
-            <ServiceTypeSelector<InquiryFormData>
-              register={register}
-              setValue={setValue}
-              error={errors.serviceType?.message as string}
-            />
             <FormInput<InquiryFormData>
               id="email"
               label="이메일"
@@ -55,26 +47,37 @@ export default function InquiryPage() {
               error={errors.email?.message as string}
               placeholder="이메일을 입력하세요"
             />
-            <FormInput<InquiryFormData>
-              id="budget"
-              label="예상 예산"
+            <ServiceTypeSelector<InquiryFormData>
               register={register}
-              placeholder="예: 5,000만원"
-            />
-            <FormInput<InquiryFormData>
-              id="timeline"
-              label="희망 개발 기간"
-              register={register}
-              placeholder="예: 3개월"
+              setValue={setValue}
+              error={errors.serviceType?.message as string}
             />
             <FormInput<InquiryFormData>
               id="description"
-              label="서비스 설명"
+              label="프로젝트 설명"
               type="textarea"
               required
               register={register}
               error={errors.description?.message as string}
-              placeholder="서비스에 대해 자세히 설명해주세요."
+              placeholder="어떤 프로젝트인지 설명해주세요. 알잘딱깔센으로 알아들을게요."
+            />
+            <FormInput<InquiryFormData>
+              id="detail"
+              label="상세 요구사항"
+              type="file"
+              required
+              register={register}
+              error={errors.detail?.message as string}
+              placeholder="상세 요구사항을 첨부해주세요."
+            />
+            <FormInput<InquiryFormData>
+              id="designReference"
+              label="디자인 참고자료"
+              type="file"
+              required
+              register={register}
+              error={errors.designReference?.message as string}
+              placeholder="디자인 참고자료를 첨부해주세요."
             />
           </div>
         </section>

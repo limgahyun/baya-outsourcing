@@ -47,7 +47,7 @@ export default function ContactForm<T extends BaseContactFormData>({
         required
         register={register}
         error={errors.name?.message as string}
-        placeholder="담당자 이름을 입력하세요"
+        placeholder="이름을 입력하세요"
       />
       <FormInput<T>
         id={"phoneNum" as Path<T>}

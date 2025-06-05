@@ -9,6 +9,8 @@ export interface InquiryFormData extends BaseContactFormData {
   budget: string;
   timeline: string;
   description: string;
+  detail: string;
+  designReference: string;
   serviceType: string;
 }
 
