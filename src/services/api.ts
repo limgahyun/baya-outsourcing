@@ -77,6 +77,34 @@ export interface CreateUserResponse {
   phoneNum: string;
 }
 
+interface FileMetadata {
+  access: string;
+  path: string;
+  name: string;
+  type: string;
+  size: number;
+  mime: string;
+  meta: Record<string, unknown>;
+}
+
+interface CreateInquiryRequest {
+  user_id: number;
+  projectName?: string;
+  serviceType: string;
+  detailsText: string;
+  designReferenceText?: string;
+  quoteresult_id?: number;
+  email?: string;
+  detailsFile?: FileMetadata;
+  designReferenceFile?: FileMetadata;
+}
+
+interface CreateInquiryResponse {
+  id: number;
+  created_at: number;
+  // Add other response fields if needed
+}
+
 export const quoteApi = {
   // Get quote result by ID
   getQuoteResultById: async (id: number): Promise<QuoteResponse> => {
@@ -109,6 +137,19 @@ export const quoteApi = {
       return response.data;
     } catch (error) {
       console.error("Error creating user:", error);
+      throw error;
+    }
+  },
+
+  // Create inquiry
+  createInquiry: async (
+    data: CreateInquiryRequest
+  ): Promise<CreateInquiryResponse> => {
+    try {
+      const response = await api.post("/requestinfo", data);
+      return response.data;
+    } catch (error) {
+      console.error("Error creating inquiry:", error);
       throw error;
     }
   },

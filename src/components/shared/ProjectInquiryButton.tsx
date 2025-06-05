@@ -20,7 +20,9 @@ export default function ProjectInquiryButton({
       JSON.stringify({
         name: quoteData.user.name,
         phoneNum: quoteData.user.phoneNum,
-        serviceType: quoteData.quoteInfo.serviceType, // This is already the service type ID
+        userId: quoteData.user.id,
+        quoteResultId: quoteData.result.id,
+        serviceType: quoteData.quoteInfo.serviceType,
       })
     );
 
