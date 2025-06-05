@@ -311,7 +311,7 @@ export default async function QuoteResultPage({ params }: Props) {
       {/* Download Section */}
       <section className="flex flex-col sm:flex-row gap-4">
         <DownloadSection quoteId={resolvedParams.id} />
-        <ProjectInquiryButton />
+        <ProjectInquiryButton quoteData={quoteData} />
       </section>
 
       <div className="text-center mt-8">

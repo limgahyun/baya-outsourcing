@@ -18,6 +18,27 @@ export default function InquiryPage() {
     setValue,
   } = form;
 
+  // Track if user came from quote result
+  const [hasQuoteData, setHasQuoteData] = React.useState(false);
+
+  // Load stored quote data on mount
+  React.useEffect(() => {
+    const storedData = sessionStorage.getItem("quoteInquiryData");
+    if (storedData) {
+      const data = JSON.parse(storedData);
+      setValue("name", data.name);
+      setValue("phoneNum", data.phoneNum);
+      setValue("serviceType", data.serviceType, {
+        shouldValidate: true,
+        shouldDirty: true,
+        shouldTouch: true,
+      });
+      setHasQuoteData(true);
+      // Clear the stored data after using it
+      sessionStorage.removeItem("quoteInquiryData");
+    }
+  }, [setValue]);
+
   const onSubmit = async (data: InquiryFormData) => {
     // TODO: Implement form submission logic
     console.log(data);
@@ -30,14 +51,16 @@ export default function InquiryPage() {
       footerText="🚨 문의하신 내용은 영업일 기준 1-2일 내로 답변드리겠습니다."
     >
       <div className="space-y-8">
-        <Link
-          href="/quote"
-          className="flex justify-center w-full px-8 py-4 rounded-xl font-medium text-base transition-all duration-300
+        {!hasQuoteData && (
+          <Link
+            href="/quote"
+            className="flex justify-center w-full px-8 py-4 rounded-xl font-medium text-base transition-all duration-300
               shadow-[0_4px_12px_rgba(0,0,0,0.1)]
               bg-blue-600 text-white hover:bg-blue-700 hover:shadow-[0_4px_16px_rgba(37,99,235,0.2)]"
-        >
-          10초만에 견적 확인하고 오기
-        </Link>
+          >
+            10초만에 견적 확인하고 오기
+          </Link>
+        )}
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           <section className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">

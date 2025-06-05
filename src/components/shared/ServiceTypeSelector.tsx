@@ -25,6 +25,33 @@ export default function ServiceTypeSelector<TFormValues extends FieldValues>({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedType, setSelectedType] = useState<string>("");
 
+  // Handle initial value
+  React.useEffect(() => {
+    const serviceTypePath = "serviceType" as Path<TFormValues>;
+    register(serviceTypePath, {
+      required: "서비스 유형을 선택해주세요",
+      onChange: (e: { target?: { value?: string } }) => {
+        if (!e?.target?.value) return;
+        const serviceId = e.target.value;
+        const serviceType = SERVICE_TYPES.find((type) => type.id === serviceId);
+        if (serviceType) {
+          setSelectedType(serviceType.name);
+        }
+      },
+    });
+
+    // Initialize with current value if exists
+    const input = document.querySelector(
+      `input[name="${serviceTypePath}"]`
+    ) as HTMLInputElement;
+    if (input?.value) {
+      const serviceType = SERVICE_TYPES.find((type) => type.id === input.value);
+      if (serviceType) {
+        setSelectedType(serviceType.name);
+      }
+    }
+  }, [register]);
+
   const handleSelect = (type: ServiceType) => {
     setSelectedType(type.name);
     const serviceTypePath = "serviceType" as Path<TFormValues>;

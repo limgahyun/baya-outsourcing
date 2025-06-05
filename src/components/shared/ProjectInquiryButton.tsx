@@ -1,10 +1,31 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
+import { QuoteResponse } from "@/services/api";
 
-export default function ProjectInquiryButton() {
+interface ProjectInquiryButtonProps {
+  quoteData: QuoteResponse;
+}
+
+export default function ProjectInquiryButton({
+  quoteData,
+}: ProjectInquiryButtonProps) {
+  const router = useRouter();
+
   const handleClick = () => {
-    window.open("https://tally.so/r/mVyWdy", "_blank");
+    // Store the data in sessionStorage to persist through navigation
+    sessionStorage.setItem(
+      "quoteInquiryData",
+      JSON.stringify({
+        name: quoteData.user.name,
+        phoneNum: quoteData.user.phoneNum,
+        serviceType: quoteData.quoteInfo.serviceType, // This is already the service type ID
+      })
+    );
+
+    // Navigate to inquiry page
+    router.push("/inquiry");
   };
 
   return (
