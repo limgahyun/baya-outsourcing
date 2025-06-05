@@ -47,6 +47,10 @@ export default function InquiryPage() {
               error={errors.email?.message as string}
               placeholder="이메일을 입력하세요"
             />
+          </div>
+        </section>
+        <section className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
+          <div className="space-y-6">
             <ServiceTypeSelector<InquiryFormData>
               register={register}
               setValue={setValue}
@@ -65,19 +69,27 @@ export default function InquiryPage() {
               id="detail"
               label="상세 요구사항"
               type="file"
-              required
               register={register}
               error={errors.detail?.message as string}
-              placeholder="상세 요구사항을 첨부해주세요."
+              placeholder="상세 요구사항 문서를 첨부해주세요"
+              subDescription="프로젝트의 상세 요구사항을 담은 문서가 있다면 첨부해주세요. (PDF, Word, Excel, .zip 등)"
+            />
+            <FormInput<InquiryFormData>
+              id="design"
+              label="디자인 설명"
+              type="textarea"
+              register={register}
+              error={errors.design?.message as string}
+              placeholder="원하는 느낌의 디자인이 있다면 알려주세요! 사이트 링크 또는 말로 설명주셔도 좋아요."
             />
             <FormInput<InquiryFormData>
               id="designReference"
               label="디자인 참고자료"
               type="file"
-              required
               register={register}
               error={errors.designReference?.message as string}
-              placeholder="디자인 참고자료를 첨부해주세요."
+              placeholder="디자인 참고자료를 첨부해주세요"
+              subDescription="참고하고 싶은 디자인 파일을 첨부해주세요. (JPG, PNG, PDF, .zip 등)"
             />
           </div>
         </section>

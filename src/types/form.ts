@@ -10,6 +10,7 @@ export interface InquiryFormData extends BaseContactFormData {
   timeline: string;
   description: string;
   detail: string;
+  design: string;
   designReference: string;
   serviceType: string;
 }

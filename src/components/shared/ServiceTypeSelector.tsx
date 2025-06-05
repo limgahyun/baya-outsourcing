@@ -9,6 +9,7 @@ import {
   FieldValues,
   PathValue,
 } from "react-hook-form";
+import { ServiceTypeIcon, ChevronDownIcon } from "@/components/icons";
 
 type ServiceTypeSelectorProps<TFormValues extends FieldValues> = {
   register: UseFormRegister<TFormValues>;
@@ -63,23 +64,13 @@ export default function ServiceTypeSelector<TFormValues extends FieldValues>({
               {selectedType ? (
                 <>
                   <div className="flex-shrink-0 w-5 h-5">
-                    <svg
+                    <ServiceTypeIcon
                       className="w-5 h-5 text-gray-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d={
-                          SERVICE_TYPES.find(
-                            (type) => type.name === selectedType
-                          )?.icon || SERVICE_TYPES[6].icon
-                        }
-                      />
-                    </svg>
+                      path={
+                        SERVICE_TYPES.find((type) => type.name === selectedType)
+                          ?.icon || SERVICE_TYPES[6].icon
+                      }
+                    />
                   </div>
                   <span className="text-gray-900">{selectedType}</span>
                 </>
@@ -87,20 +78,10 @@ export default function ServiceTypeSelector<TFormValues extends FieldValues>({
                 <span className="text-gray-500">서비스 유형을 선택하세요</span>
               )}
             </div>
-            <svg
+            <ChevronDownIcon
               className={`w-5 h-5 text-gray-400 transition-transform duration-200
                 ${isOpen ? "transform rotate-180" : ""}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+            />
           </div>
         </button>
 
@@ -118,23 +99,14 @@ export default function ServiceTypeSelector<TFormValues extends FieldValues>({
                   `}
                 >
                   <div className="flex-shrink-0 w-5 h-5 mt-0.5">
-                    <svg
+                    <ServiceTypeIcon
                       className={`w-5 h-5 ${
                         selectedType === type.name
                           ? "text-blue-600"
                           : "text-gray-600"
                       }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d={type.icon}
-                      />
-                    </svg>
+                      path={type.icon}
+                    />
                   </div>
                   <div>
                     <div
@@ -171,22 +143,13 @@ export default function ServiceTypeSelector<TFormValues extends FieldValues>({
         {selectedType && !isOpen && (
           <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg animate-fadeIn">
             <div className="flex-shrink-0 w-5 h-5 mt-0.5">
-              <svg
+              <ServiceTypeIcon
                 className="w-5 h-5 text-gray-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d={
-                    SERVICE_TYPES.find((type) => type.name === selectedType)
-                      ?.icon || SERVICE_TYPES[6].icon
-                  }
-                />
-              </svg>
+                path={
+                  SERVICE_TYPES.find((type) => type.name === selectedType)
+                    ?.icon || SERVICE_TYPES[6].icon
+                }
+              />
             </div>
             <p className="text-sm text-gray-600">
               {SERVICE_TYPES.find((type) => type.name === selectedType)

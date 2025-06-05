@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { QuoteFormData } from "@/types/form";
 import ContactForm from "@/components/shared/ContactForm";
 import ServiceTypeSelector from "@/components/shared/ServiceTypeSelector";
+import { DynamicIcon, ChevronDownIcon } from "@/components/icons";
 
 interface FunctionCardProps {
   func: (typeof FUNCTION_CARDS)[0];
@@ -31,19 +32,11 @@ const FunctionCard: React.FC<FunctionCardProps> = ({
           : "border-gray-100 hover:border-blue-300"
       }`}
   >
-    <svg
+    <DynamicIcon
       className={`w-6 h-6 ${isSelected ? "text-blue-600" : "text-gray-600"}`}
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={1.5}
-        d={func.icon}
-      />
-    </svg>
+      path={func.icon}
+      strokeWidth={1.5}
+    />
     <span className="text-sm text-center">{func.name}</span>
   </div>
 );
@@ -169,21 +162,11 @@ export default function QuotePage() {
                   : "opacity-100"
               }`}
           >
-            <svg
-              className={`w-6 h-6 transition-transform duration-300 ${
+            <ChevronDownIcon
+              className={`transition-transform duration-300 ${
                 isFirstSectionComplete ? "text-white" : "text-gray-400"
               }`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+            />
           </div>
         </section>
 

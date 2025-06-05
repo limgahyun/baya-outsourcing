@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { UploadIcon } from "@/components/icons";
 
 type Props = {
   quoteId: string;
@@ -92,19 +93,7 @@ export default function DownloadSection({ quoteId }: Props) {
         onClick={handleDownloadPDF}
         className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 text-white rounded-xl hover:bg-gray-900 transition-colors duration-200 sm:w-[190px]"
       >
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-          />
-        </svg>
+        <UploadIcon className="w-5 h-5" />
         PDF 다운로드
       </button>
     </div>

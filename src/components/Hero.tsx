@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowDownIcon } from "@/components/icons";
+
 export default function Hero() {
   return (
     <section className="relative h-screen overflow-hidden">
@@ -49,17 +51,7 @@ export default function Hero() {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="animate-bounce">
-          <svg
-            className="w-6 h-6 text-white"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
+          <ArrowDownIcon className="w-6 h-6 text-white" />
         </div>
       </div>
     </section>
