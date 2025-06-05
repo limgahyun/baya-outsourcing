@@ -124,7 +124,7 @@ export default function QuotePage() {
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-gmarket font-bold mb-4">뚝딱 견적소</h1>
+        <h1 className="text-4xl font-gmarket font-bold mb-4">바야 견적소</h1>
         <p className="text-xl text-gray-600">
           10초만에 내 프로젝트 견적 확인하기
         </p>

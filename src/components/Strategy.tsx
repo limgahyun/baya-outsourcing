@@ -11,7 +11,7 @@ export default function Strategy() {
           {/* Section Title */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-gmarket text-blue-1000">
-              뚝딱랩의 성공전략
+              바야의 성공전략
             </h2>
           </div>
 

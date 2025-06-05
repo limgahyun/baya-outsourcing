@@ -35,7 +35,7 @@ export default function Testimonials() {
                 고객 후기
               </h2>
               <p className="text-lg md:text-xl text-gray-600 font-pretendard">
-                뚝딱랩과 함께한 고객들의 이야기
+                바야와 함께한 고객들의 이야기
               </p>
             </div>
             <div className="absolute bottom-0 right-0 gap-8 hidden sm:flex">

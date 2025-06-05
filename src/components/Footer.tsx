@@ -12,13 +12,13 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <Image
                 src="/logo/logo.svg"
-                alt="뚝딱랩 로고"
+                alt="바야 로고"
                 width={32}
                 height={32}
                 className="w-6 h-6 md:w-8 md:h-8"
               />
               <span className="font-pretendard font-bold text-lg md:text-xl text-blue-1000">
-                뚝딱랩
+                바야
               </span>
             </div>
           </div>

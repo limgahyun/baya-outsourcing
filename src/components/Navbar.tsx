@@ -15,13 +15,13 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-3">
             <Image
               src="/logo/logo.svg"
-              alt="뚝딱랩 로고"
+              alt="바야 로고"
               width={32}
               height={32}
               className="w-8 h-8"
             />
             <span className="font-pretendard font-bold text-xl text-blue-1000 break-keep">
-              뚝딱랩
+              바야
             </span>
           </Link>
 
@@ -32,7 +32,7 @@ export default function Navbar() {
                 href="/quote"
                 className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors break-keep"
               >
-                뚝딱 견적소
+                바야 견적소
               </Link>
               <Link
                 href="/coming-soon"
@@ -101,7 +101,7 @@ export default function Navbar() {
               className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
-              뚝딱 견적소
+              바야 견적소
             </Link>
             <Link
               href="/coming-soon"
