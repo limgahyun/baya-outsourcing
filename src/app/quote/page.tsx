@@ -70,12 +70,10 @@ export default function QuotePage() {
 
   useEffect(() => {
     setIsActive(
-      !(
-        isFirstSectionComplete &&
+      isFirstSectionComplete &&
         serviceType?.trim() !== "" &&
         adminRequired !== undefined &&
         functionList.length > 0
-      )
     );
   }, [isFirstSectionComplete, serviceType, adminRequired, functionList.length]);
 
@@ -269,7 +267,7 @@ export default function QuotePage() {
         <div className="text-center pt-4">
           <button
             type="submit"
-            disabled={isActive}
+            disabled={!isActive}
             className={`w-full px-8 py-4 rounded-xl font-medium text-base transition-all duration-300
               shadow-[0_4px_12px_rgba(0,0,0,0.1)]
               ${
