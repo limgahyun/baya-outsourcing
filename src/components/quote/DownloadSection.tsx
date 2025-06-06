@@ -41,6 +41,7 @@ export default function DownloadSection({ quoteId }: Props) {
         const functionTags = clonedSection.querySelectorAll(
           "[data-pdf-function-tag]"
         );
+
         functionTags.forEach((tag) => {
           const element = tag as HTMLElement;
           element.style.backgroundColor = "#F3F4F6";
@@ -50,6 +51,22 @@ export default function DownloadSection({ quoteId }: Props) {
           element.style.borderRadius = "100px";
           element.style.paddingLeft = "12px";
           element.style.paddingRight = "12px";
+          element.style.color = "#4D4D4D";
+        });
+
+        const functionTags2 = clonedSection.querySelectorAll(
+          "[data-pdf-function-tag-2]"
+        );
+
+        functionTags2.forEach((tag) => {
+          const element = tag as HTMLElement;
+          element.style.display = "flex";
+          element.style.flexDirection = "column";
+          element.style.justifyContent = "start";
+          element.style.justifyItems = "start";
+          element.style.alignItems = "start";
+          element.style.alignContent = "start";
+          element.style.height = "48px";
           element.style.color = "#4D4D4D";
         });
 

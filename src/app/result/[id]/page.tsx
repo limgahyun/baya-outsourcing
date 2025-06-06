@@ -120,9 +120,14 @@ export default async function QuoteResultPage({ params }: Props) {
       <section className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
         {/* Expected Period */}
         <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
-          <div className="flex items-center gap-2 mb-2">
-            <CalendarIcon className="text-blue-600 w-5 h-5" />
-            <span className="text-sm font-medium text-gray-600">예상 기간</span>
+          <div
+            data-pdf-function-tag-2
+            className="flex items-center gap-2 mb-2 h-6"
+          >
+            <CalendarIcon className="text-blue-600 w-6 h-6" />
+            <span className="text-sm font-medium text-gray-600 align-middle">
+              예상 기간
+            </span>
           </div>
           <div className="text-2xl font-bold text-gray-900">
             {quoteData.result.period}
@@ -133,9 +138,14 @@ export default async function QuoteResultPage({ params }: Props) {
 
         {/* Team Size */}
         <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative">
-          <div className="flex items-center gap-2 mb-2">
-            <TeamIcon className="text-blue-600 w-5 h-5" />
-            <span className="text-sm font-medium text-gray-600">투입 인력</span>
+          <div
+            data-pdf-function-tag-2
+            className="flex items-center gap-2 mb-2 h-6"
+          >
+            <TeamIcon className="text-blue-600 w-6 h-6" />
+            <span className="text-sm font-medium text-gray-600 align-middle">
+              투입 인력
+            </span>
           </div>
           <div className="text-2xl font-bold text-gray-900">
             4<span className="text-base font-normal"> 명</span>
@@ -147,9 +157,14 @@ export default async function QuoteResultPage({ params }: Props) {
 
         {/* Expected Cost */}
         <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] relative sm:col-span-2 md:col-span-1">
-          <div className="flex items-center gap-2 mb-2">
-            <CurrencyIcon className="text-blue-600 w-5 h-5" />
-            <span className="text-sm font-medium text-gray-600">예상 견적</span>
+          <div
+            data-pdf-function-tag-2
+            className="flex items-center gap-2 mb-2 h-6 align-middle"
+          >
+            <CurrencyIcon className="text-blue-600 w-6 h-6" />
+            <span className="text-sm font-medium text-gray-600 align-middle">
+              예상 견적
+            </span>
           </div>
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(quoteData.result.expenses)}
