@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="flex flex-col space-y-6 md:space-y-8">
           {/* Logo and Company Name */}
           <div className="flex items-center justify-center md:justify-between mb-8 md:mb-12">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <Image
-                src="/logo/logo.png"
+                src="/logo/logo2.png"
                 alt="바야 로고"
                 width={100}
                 height={100}
