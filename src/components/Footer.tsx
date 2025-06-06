@@ -11,11 +11,11 @@ export default function Footer() {
           <div className="flex items-center justify-center md:justify-between mb-8 md:mb-12">
             <div className="flex items-center gap-2">
               <Image
-                src="/logo/logo.svg"
+                src="/logo/logo.png"
                 alt="바야 로고"
-                width={32}
-                height={32}
-                className="w-6 h-6 md:w-8 md:h-8"
+                width={100}
+                height={100}
+                className="w-auto h-6 md:h-8"
               />
               <span className="font-pretendard font-bold text-lg md:text-xl text-blue-1000">
                 바야

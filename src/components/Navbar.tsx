@@ -14,11 +14,11 @@ export default function Navbar() {
           {/* Logo and Business Name */}
           <Link href="/" className="flex items-center space-x-3">
             <Image
-              src="/logo/logo.svg"
+              src="/logo/logo.png"
               alt="바야 로고"
-              width={32}
-              height={32}
-              className="w-8 h-8"
+              width={100}
+              height={100}
+              className="w-auto h-8"
             />
             <span className="font-pretendard font-bold text-xl text-blue-1000 break-keep">
               바야
