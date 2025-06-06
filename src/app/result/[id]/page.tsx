@@ -101,7 +101,8 @@ export default async function QuoteResultPage({ params }: Props) {
                   {selectedFunctions.map((func) => (
                     <span
                       key={func.id}
-                      className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700"
+                      data-pdf-function-tag
+                      className="px-3 bg-gray-100 rounded-full text-sm text-gray-700 flex items-center justify-center h-8 align-text-top text-center"
                     >
                       {func.name}
                     </span>
@@ -309,10 +310,10 @@ export default async function QuoteResultPage({ params }: Props) {
       </section>
 
       {/* Download Section */}
-      <section className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-col sm:flex-row gap-4">
         <DownloadSection quoteId={resolvedParams.id} />
         <ProjectInquiryButton quoteData={quoteData} />
-      </section>
+      </div>
 
       <div className="text-center mt-8">
         <p className="text-sm text-gray-300">

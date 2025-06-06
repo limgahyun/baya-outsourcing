@@ -36,6 +36,23 @@ export default function DownloadSection({ quoteId }: Props) {
         const clonedSection = section.cloneNode(true) as HTMLElement;
         clonedSection.style.pageBreakInside = "avoid";
         clonedSection.style.marginBottom = "20px";
+
+        // Find and modify function tags for PDF
+        const functionTags = clonedSection.querySelectorAll(
+          "[data-pdf-function-tag]"
+        );
+        functionTags.forEach((tag) => {
+          const element = tag as HTMLElement;
+          element.style.backgroundColor = "#F3F4F6";
+          element.style.textAlign = "center";
+          element.style.top = "0px";
+          element.style.display = "inline-block";
+          element.style.borderRadius = "100px";
+          element.style.paddingLeft = "12px";
+          element.style.paddingRight = "12px";
+          element.style.color = "#4D4D4D";
+        });
+
         pdfContent.appendChild(clonedSection);
       });
 
