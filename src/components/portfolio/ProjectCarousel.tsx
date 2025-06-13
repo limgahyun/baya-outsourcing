@@ -7,9 +7,13 @@ import { Project } from "@/app/portfolio/data";
 
 interface ProjectCarouselProps {
   projects: Project[];
+  color: string;
 }
 
-export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
+export default function ProjectCarousel({
+  projects,
+  color,
+}: ProjectCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0); // -1 for left, 1 for right
 
@@ -176,7 +180,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
       </motion.div>
 
       {/* Pagination Dots */}
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="flex justify-center gap-2 mt-8 lg:mt-12">
         {projects.map((_, index) => (
           <button
             key={index}
@@ -185,7 +189,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
               setCurrentIndex(index);
             }}
             className={`w-2.5 h-2.5 rounded-full transition-colors ${
-              index === currentIndex ? "bg-blue-600" : "bg-gray-300"
+              index === currentIndex ? `bg-${color}-500` : "bg-gray-300"
             }`}
           />
         ))}

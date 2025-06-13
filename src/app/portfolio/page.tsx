@@ -4,12 +4,6 @@ import ProjectCarousel from "@/components/portfolio/ProjectCarousel";
 import { categories } from "@/app/portfolio/data";
 import Image from "next/image";
 
-const categoryStyles = {
-  website: "bg-blue-500",
-  commerce: "bg-green-500",
-  others: "bg-red-500",
-};
-
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen overflow-hidden">
@@ -48,15 +42,16 @@ export default function PortfolioPage() {
             <div key={category.id} className="mb-32">
               <div className="mb-12">
                 <div
-                  className={`w-10 h-1 rounded-full mb-2 ${
-                    categoryStyles[category.id as keyof typeof categoryStyles]
-                  }`}
+                  className={`w-10 h-1 rounded-full mb-2 bg-${category.color}-500`}
                 />
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900">
                   {category.name}
                 </h2>
               </div>
-              <ProjectCarousel projects={category.projects} />
+              <ProjectCarousel
+                projects={category.projects}
+                color={category.color}
+              />
             </div>
           ))}
         </div>

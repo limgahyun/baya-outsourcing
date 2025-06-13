@@ -10,6 +10,7 @@ export interface Project {
 export interface Category {
   id: string;
   name: string;
+  color: string;
   projects: Project[];
 }
 
@@ -17,6 +18,7 @@ export const categories: Category[] = [
   {
     id: "website",
     name: "웹사이트",
+    color: "blue",
     projects: [
       {
         id: "sasohan",
@@ -53,6 +55,7 @@ export const categories: Category[] = [
   {
     id: "commerce",
     name: "커머스",
+    color: "green",
     projects: [
       {
         id: "perfumory",
@@ -89,6 +92,7 @@ export const categories: Category[] = [
   {
     id: "others",
     name: "기타",
+    color: "red",
     projects: [
       {
         id: "other1",
