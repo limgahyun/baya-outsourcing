@@ -38,18 +38,18 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
     <div className="relative">
       {/* Previous Project Preview (background) */}
       <motion.button
-        className="absolute -left-28 top-1/2 -translate-y-1/2 z-0"
+        className="absolute -left-32 top-1/2 -translate-y-1/2 z-0 w-[220px] h-[360px] md:w-[180px] md:h-[220px]"
         whileHover={{ opacity: 0.9 }}
         initial={{ opacity: 0.4 }}
         animate={{ opacity: 0.4 }}
         transition={{ duration: 0.2 }}
         onClick={() => paginate(-1)}
-        style={{ width: "180px", height: "220px", filter: "blur(1px)" }}
+        style={{}}
         tabIndex={-1}
         aria-label={`이전 프로젝트: ${prevProject.title}`}
       >
         <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-100 pointer-events-none">
-          <div className="relative w-full h-32">
+          <div className="relative w-full h-72 md:h-32">
             <Image
               src={prevProject.images}
               alt={prevProject.title}
@@ -67,18 +67,18 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
       {/* Next Project Preview (background) */}
       <motion.button
-        className="absolute -right-28 top-1/2 -translate-y-1/2 z-0"
+        className="absolute -right-32 top-1/2 -translate-y-1/2 z-0 w-[220px] h-[360px] md:w-[180px] md:h-[220px]"
         whileHover={{ opacity: 0.9 }}
         initial={{ opacity: 0.4 }}
         animate={{ opacity: 0.4 }}
         transition={{ duration: 0.2 }}
         onClick={() => paginate(1)}
-        style={{ width: "180px", height: "220px", filter: "blur(1px)" }}
+        style={{}}
         tabIndex={-1}
         aria-label={`다음 프로젝트: ${nextProject.title}`}
       >
         <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-100 pointer-events-none">
-          <div className="relative w-full h-32">
+          <div className="relative w-full h-72 md:h-32">
             <Image
               src={nextProject.images}
               alt={nextProject.title}
@@ -113,7 +113,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
           z: 10,
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="flex flex-col md:flex-row gap-12 items-center max-w-6xl mx-auto p-12 bg-white rounded-2xl shadow-lg z-10"
+        className="flex flex-col md:flex-row gap-12 items-center max-w-6xl mx-auto p-6 sm:p-12 bg-white rounded-2xl shadow-xl border-gray-200 z-10"
       >
         {/* Left side - Project Image */}
         <div className="relative w-full aspect-[4/3] overflow-hidden">
@@ -142,20 +142,20 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
             x: direction === 1 ? -100 : 100,
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="flex flex-col justify-center space-y-6 w-full h-full"
+          className="flex flex-col justify-center space-y-0 sm:space-y-6 w-full h-full"
         >
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-4">
               {project.title}
             </h2>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+            <p className="hidden sm:block text-gray-600 mb-6 text-lg leading-relaxed">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-4 py-1.5 bg-gray-100 rounded-full text-sm text-gray-600"
+                  className="px-3 py-1.5 bg-gray-100 rounded-full text-xs sm:text-sm text-gray-600"
                 >
                   {tag}
                 </span>
@@ -167,7 +167,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
             <a
               href={project.link}
               rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+              className="inline-block bg-blue-600 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors w-full sm:w-auto text-center"
             >
               프로젝트 보기
             </a>

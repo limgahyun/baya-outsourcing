@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function PortfolioPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-hidden">
       {/* Header Section */}
       <section className="relative w-full h-[464px] pt-16 flex items-center justify-center">
         {/* Background Image */}
@@ -34,15 +34,17 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 max-w-6xl mx-auto">
-        {categories.map((category) => (
-          <div key={category.id} className="mb-32">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12">
-              {category.name}
-            </h2>
-            <ProjectCarousel projects={category.projects} />
-          </div>
-        ))}
+      <section className="py-20 px-8 sm:px-12 mx-auto">
+        <div className="max-w-6xl mx-auto">
+          {categories.map((category) => (
+            <div key={category.id} className="mb-32">
+              <h2 className="text-3xl font-bold text-gray-900 mb-12">
+                {category.name}
+              </h2>
+              <ProjectCarousel projects={category.projects} />
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   );
