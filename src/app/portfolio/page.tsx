@@ -36,7 +36,7 @@ export default function PortfolioPage() {
       {/* Projects Section */}
       <section className="py-20 max-w-6xl mx-auto">
         {categories.map((category) => (
-          <div key={category.id} className="mb-20">
+          <div key={category.id} className="mb-32">
             <h2 className="text-3xl font-bold text-gray-900 mb-12">
               {category.name}
             </h2>

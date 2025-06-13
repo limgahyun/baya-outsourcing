@@ -22,31 +22,31 @@ export const categories: Category[] = [
         id: "sasohan",
         title: "사소한",
         description:
-          "사소한 일상의 변화를 만드는 웹사이트입니다. 사용자들이 일상 속 작은 실천을 통해 더 나은 삶을 만들어갈 수 있도록 돕습니다.",
+          "사회적 기업 중개와 소비관리 서비스. 개인의 지출을 관리할 수 있는 가계부 기록 서비스를 제공하면서 동시에 사회적 기업을 소개 및 주개해주는 플랫폼입니다.",
         images: "/portfolio/sasohan/sasohan.png",
 
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-        link: "https://sasohan.com",
+        link: "/portfolio/sasohan",
       },
       {
-        id: "portfolio1",
-        title: "포트폴리오 1",
+        id: "perfumory",
+        title: "perfumory",
         description:
-          "첫 번째 포트폴리오 프로젝트입니다. 현대적인 디자인과 사용자 경험을 중심으로 제작되었습니다.",
-        images: "/portfolio/sasohan/sasohan_view1.png",
+          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
+        images: "/portfolio/perfumory/perfumory.png",
 
-        tags: ["React", "TypeScript", "Styled Components"],
-        link: "https://portfolio1.com",
+        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
+        link: "/portfolio/perfumory",
       },
       {
-        id: "portfolio2",
-        title: "포트폴리오 2",
+        id: "bogeoping",
+        title: "복어핑",
         description:
-          "두 번째 포트폴리오 프로젝트입니다. 혁신적인 기능과 세련된 UI를 제공합니다.",
-        images: "/portfolio/sasohan/sasohan_view1.png",
+          "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
+        images: "/portfolio/bogeoping/bogeoping.png",
 
         tags: ["Vue.js", "JavaScript", "SCSS"],
-        link: "https://portfolio2.com",
+        link: "/portfolio/bogeoping",
       },
     ],
   },
@@ -55,14 +55,14 @@ export const categories: Category[] = [
     name: "커머스",
     projects: [
       {
-        id: "commerce1",
-        title: "커머스 프로젝트 1",
+        id: "perfumory",
+        title: "perfumory",
         description:
-          "첫 번째 커머스 프로젝트입니다. 사용자 중심의 쇼핑 경험을 제공합니다.",
-        images: "/portfolio/sasohan/sasohan.png",
+          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
+        images: "/portfolio/perfumory/perfumory.png",
 
-        tags: ["Next.js", "TypeScript", "Redux"],
-        link: "https://commerce1.com",
+        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
+        link: "/portfolio/perfumory",
       },
       {
         id: "commerce2",
@@ -72,17 +72,17 @@ export const categories: Category[] = [
         images: "/portfolio/sasohan/sasohan.png",
 
         tags: ["React", "Node.js", "MongoDB"],
-        link: "https://commerce2.com",
+        link: "/portfolio/sasohan",
       },
       {
         id: "commerce3",
         title: "커머스 프로젝트 3",
         description:
           "세 번째 커머스 프로젝트입니다. AI 기반 상품 추천 시스템을 도입했습니다.",
-        images: "/portfolio/sasohan/sasohan.png",
+        images: "/portfolio/bogeoping/bogeoping.png",
 
         tags: ["Vue.js", "Python", "TensorFlow"],
-        link: "https://commerce3.com",
+        link: "/portfolio/bogeoping",
       },
     ],
   },
@@ -98,25 +98,25 @@ export const categories: Category[] = [
         images: "/portfolio/sasohan/sasohan.png",
 
         tags: ["React Native", "TypeScript", "Firebase"],
-        link: "https://other1.com",
+        link: "/portfolio/sasohan",
       },
       {
         id: "other2",
         title: "기타 프로젝트 2",
         description: "두 번째 기타 프로젝트입니다. 사용자 경험을 개선했습니다.",
-        images: "/portfolio/sasohan/sasohan.png",
+        images: "/portfolio/perfumory/perfumory.png",
 
         tags: ["Flutter", "Dart", "GraphQL"],
-        link: "https://other2.com",
+        link: "/portfolio/perfumory",
       },
       {
         id: "other3",
         title: "기타 프로젝트 3",
         description: "세 번째 기타 프로젝트입니다. 새로운 기술을 도입했습니다.",
-        images: "/portfolio/sasohan/sasohan.png",
+        images: "/portfolio/bogeoping/bogeoping.png",
 
         tags: ["Angular", "TypeScript", "AWS"],
-        link: "https://other3.com",
+        link: "/portfolio/bogeoping",
       },
     ],
   },

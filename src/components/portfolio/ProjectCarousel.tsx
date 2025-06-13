@@ -166,7 +166,6 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
           <div>
             <a
               href={project.link}
-              target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
             >
