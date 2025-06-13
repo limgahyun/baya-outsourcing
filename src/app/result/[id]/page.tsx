@@ -45,7 +45,7 @@ export default async function QuoteResultPage({ params }: Props) {
     : quoteData.quoteInfo.functionList.length;
 
   return (
-    <div className="container mx-auto px-4 py-16 max-w-4xl space-y-6">
+    <div className="container mx-auto px-4 py-16 max-w-4xl space-y-6 mt-16">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-gmarket font-bold mb-4 text-blue-900">
           바야 견적소

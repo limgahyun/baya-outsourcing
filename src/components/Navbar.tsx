@@ -3,10 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const isTransparentNavbar = pathname === "/" || pathname === "/portfolio";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +24,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || !isTransparentNavbar
           ? "bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-lg"
           : "bg-transparent border-b-2 border-white/80"
       }`}
@@ -30,7 +34,11 @@ export default function Navbar() {
           {/* Logo and Business Name */}
           <Link href="/" className="flex items-center space-x-3">
             <Image
-              src={`${isScrolled ? "/logo/logo.png" : "/logo/logo_white.png"}`}
+              src={`${
+                isScrolled || !isTransparentNavbar
+                  ? "/logo/logo.png"
+                  : "/logo/logo_white.png"
+              }`}
               alt="바야 로고"
               width={100}
               height={100}
@@ -38,7 +46,9 @@ export default function Navbar() {
             />
             <span
               className={`font-pretendard font-bold text-xl break-keep transition-colors duration-300 ${
-                isScrolled ? "text-blue-1000" : "text-white"
+                isScrolled || !isTransparentNavbar
+                  ? "text-blue-1000"
+                  : "text-white"
               }`}
             >
               바야
@@ -51,7 +61,7 @@ export default function Navbar() {
               <Link
                 href="/quote"
                 className={`font-pretendard transition-colors break-keep ${
-                  isScrolled
+                  isScrolled || !isTransparentNavbar
                     ? "text-gray-700 hover:text-blue-1000"
                     : "text-white hover:text-gray-100"
                 }`}
@@ -61,7 +71,7 @@ export default function Navbar() {
               <Link
                 href="/coming-soon"
                 className={`font-pretendard transition-colors break-keep ${
-                  isScrolled
+                  isScrolled || !isTransparentNavbar
                     ? "text-gray-700 hover:text-blue-1000"
                     : "text-white hover:text-gray-100"
                 }`}
@@ -73,7 +83,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`font-pretendard transition-colors break-keep ${
-                  isScrolled
+                  isScrolled || !isTransparentNavbar
                     ? "text-gray-700 hover:text-blue-1000"
                     : "text-white hover:text-gray-100"
                 }`}
@@ -86,7 +96,7 @@ export default function Navbar() {
             <Link
               href="/inquiry"
               className={`hidden md:block px-6 py-3 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg break-keep ${
-                isScrolled
+                isScrolled || !isTransparentNavbar
                   ? "bg-blue-1000 text-white hover:bg-blue-900"
                   : "bg-white text-blue-1000 hover:bg-gray-100"
               }`}
@@ -103,17 +113,23 @@ export default function Navbar() {
               <div className="w-6 h-5 relative flex flex-col justify-between">
                 <span
                   className={`w-full h-0.5 transition-transform duration-300 ${
-                    isScrolled ? "bg-blue-1000" : "bg-white"
+                    isScrolled || !isTransparentNavbar
+                      ? "bg-blue-1000"
+                      : "bg-white"
                   } ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
                 />
                 <span
                   className={`w-full h-0.5 transition-opacity duration-300 ${
-                    isScrolled ? "bg-blue-1000" : "bg-white"
+                    isScrolled || !isTransparentNavbar
+                      ? "bg-blue-1000"
+                      : "bg-white"
                   } ${isMenuOpen ? "opacity-0" : ""}`}
                 />
                 <span
                   className={`w-full h-0.5 transition-transform duration-300 ${
-                    isScrolled ? "bg-blue-1000" : "bg-white"
+                    isScrolled || !isTransparentNavbar
+                      ? "bg-blue-1000"
+                      : "bg-white"
                   } ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
                 />
               </div>
