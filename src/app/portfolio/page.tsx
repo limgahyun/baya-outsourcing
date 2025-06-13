@@ -24,10 +24,12 @@ export default function PortfolioPage() {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl font-bold text-white mb-6">포트폴리오</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-gmarket font-bold text-white mb-6">
+            포트폴리오
+          </h1>
           <p className="text-white/90 text-lg max-w-2xl mx-auto">
             우리는 다양한 웹사이트, 커머스 플랫폼, 그리고 혁신적인 프로젝트들을
-            만들어왔습니다. 각 프로젝트는 최신 기술과 사용자 중심 디자인을
+            만들어왔습니다. <br />각 프로젝트는 최신 기술과 사용자 중심 디자인을
             바탕으로 제작되었습니다.
           </p>
         </div>
@@ -38,7 +40,7 @@ export default function PortfolioPage() {
         <div className="max-w-6xl mx-auto">
           {categories.map((category) => (
             <div key={category.id} className="mb-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-12">
                 {category.name}
               </h2>
               <ProjectCarousel projects={category.projects} />

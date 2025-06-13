@@ -16,7 +16,7 @@ export default function PageLayout({
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl space-y-6 mt-16">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-gmarket font-bold mb-4 text-blue-900">
+        <h1 className="text-3xl md:text-4xl font-gmarket font-bold mb-4 text-blue-900">
           {title}
         </h1>
         <p className="text-xl text-gray-600">{subtitle}</p>

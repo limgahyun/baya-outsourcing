@@ -147,7 +147,7 @@ export default function Navbar() {
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4 ">
             <Link
-              href="/coming-soon"
+              href="/quote"
               className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
               onClick={() => setIsMenuOpen(false)}
             >
