@@ -48,7 +48,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
         tabIndex={-1}
         aria-label={`이전 프로젝트: ${prevProject.title}`}
       >
-        <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-100 pointer-events-none">
+        <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-50 pointer-events-none">
           <div className="relative w-full h-72 md:h-32">
             <Image
               src={prevProject.images}
@@ -77,7 +77,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
         tabIndex={-1}
         aria-label={`다음 프로젝트: ${nextProject.title}`}
       >
-        <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-100 pointer-events-none">
+        <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-50 pointer-events-none">
           <div className="relative w-full h-72 md:h-32">
             <Image
               src={nextProject.images}
@@ -151,7 +151,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
             <p className="hidden sm:block text-gray-600 mb-6 text-lg leading-relaxed">
               {project.description}
             </p>
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-8 lg:mb-12">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
@@ -163,11 +163,11 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
             </div>
           </div>
 
-          <div>
+          <div className="w-full flex justify-center sm:justify-start">
             <a
               href={project.link}
               rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors w-full sm:w-auto text-center"
+              className="inline-block text-gray-700 hover:text-gray-900 hover:border-gray-600 border-b-2 border-gray-200 px-0.5 py-1 font-medium transition-colors text-center"
             >
               프로젝트 보기
             </a>
