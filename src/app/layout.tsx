@@ -53,9 +53,7 @@ export default function RootLayout({
       <body className="font-pretendard">
         <GoogleAnalytics />
         <Navbar />
-        <main className="min-h-screen bg-white text-gray-900 pt-16">
-          {children}
-        </main>
+        <main className="min-h-screen bg-white text-gray-900">{children}</main>
         <Footer />
       </body>
     </html>

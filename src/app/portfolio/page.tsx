@@ -8,7 +8,7 @@ export default function PortfolioPage() {
   return (
     <main className="min-h-screen">
       {/* Header Section */}
-      <section className="relative w-full h-[400px] flex items-center justify-center">
+      <section className="relative w-full h-[464px] pt-16 flex items-center justify-center">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <Image
