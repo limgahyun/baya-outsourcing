@@ -12,14 +12,14 @@ export default function PortfolioPage() {
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/images/portfolio-header-bg.jpg"
+            src="/portfolio/portfolio_header.png"
             alt="Portfolio Header Background"
             fill
             className="object-cover"
             priority
           />
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
         {/* Content */}
