@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || !isTransparentNavbar
+        isScrolled || !isTransparentNavbar || isMenuOpen
           ? "bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-lg"
           : "bg-transparent border-b-2 border-white/80"
       }`}
@@ -35,7 +35,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-3">
             <Image
               src={`${
-                isScrolled || !isTransparentNavbar
+                isScrolled || !isTransparentNavbar || isMenuOpen
                   ? "/logo/logo.png"
                   : "/logo/logo_white.png"
               }`}
@@ -46,7 +46,7 @@ export default function Navbar() {
             />
             <span
               className={`font-pretendard font-bold text-xl break-keep transition-colors duration-300 ${
-                isScrolled || !isTransparentNavbar
+                isScrolled || !isTransparentNavbar || isMenuOpen
                   ? "text-blue-1000"
                   : "text-white"
               }`}
@@ -61,7 +61,7 @@ export default function Navbar() {
               <Link
                 href="/quote"
                 className={`font-pretendard transition-colors break-keep ${
-                  isScrolled || !isTransparentNavbar
+                  isScrolled || !isTransparentNavbar || isMenuOpen
                     ? "text-gray-700 hover:text-blue-1000"
                     : "text-white hover:text-gray-100"
                 }`}
@@ -71,7 +71,7 @@ export default function Navbar() {
               <Link
                 href="/coming-soon"
                 className={`font-pretendard transition-colors break-keep ${
-                  isScrolled || !isTransparentNavbar
+                  isScrolled || !isTransparentNavbar || isMenuOpen
                     ? "text-gray-700 hover:text-blue-1000"
                     : "text-white hover:text-gray-100"
                 }`}
@@ -83,7 +83,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`font-pretendard transition-colors break-keep ${
-                  isScrolled || !isTransparentNavbar
+                  isScrolled || !isTransparentNavbar || isMenuOpen
                     ? "text-gray-700 hover:text-blue-1000"
                     : "text-white hover:text-gray-100"
                 }`}
@@ -96,7 +96,7 @@ export default function Navbar() {
             <Link
               href="/inquiry"
               className={`hidden md:block px-6 py-3 rounded-lg font-pretendard font-medium transition-all duration-300 hover:shadow-lg break-keep ${
-                isScrolled || !isTransparentNavbar
+                isScrolled || !isTransparentNavbar || isMenuOpen
                   ? "bg-blue-1000 text-white hover:bg-blue-900"
                   : "bg-white text-blue-1000 hover:bg-gray-100"
               }`}
@@ -113,21 +113,21 @@ export default function Navbar() {
               <div className="w-6 h-5 relative flex flex-col justify-between">
                 <span
                   className={`w-full h-0.5 transition-transform duration-300 ${
-                    isScrolled || !isTransparentNavbar
+                    isScrolled || !isTransparentNavbar || isMenuOpen
                       ? "bg-blue-1000"
                       : "bg-white"
                   } ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
                 />
                 <span
                   className={`w-full h-0.5 transition-opacity duration-300 ${
-                    isScrolled || !isTransparentNavbar
+                    isScrolled || !isTransparentNavbar || isMenuOpen
                       ? "bg-blue-1000"
                       : "bg-white"
                   } ${isMenuOpen ? "opacity-0" : ""}`}
                 />
                 <span
                   className={`w-full h-0.5 transition-transform duration-300 ${
-                    isScrolled || !isTransparentNavbar
+                    isScrolled || !isTransparentNavbar || isMenuOpen
                       ? "bg-blue-1000"
                       : "bg-white"
                   } ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
@@ -139,13 +139,13 @@ export default function Navbar() {
 
         {/* Mobile Menu Dropdown */}
         <div
-          className={`md:hidden absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg transition-all duration-300 ease-in-out ${
+          className={`md:hidden absolute left-0 right-0 top-16 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-lg transition-all duration-300 ease-in-out ${
             isMenuOpen
               ? "opacity-100 visible"
               : "opacity-0 invisible -translate-y-2"
           }`}
         >
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4 ">
             <Link
               href="/coming-soon"
               className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
