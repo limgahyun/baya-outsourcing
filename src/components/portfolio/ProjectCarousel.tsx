@@ -38,7 +38,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
     <div className="relative">
       {/* Previous Project Preview (background) */}
       <motion.button
-        className="absolute -left-32 top-1/2 -translate-y-1/2 z-0 w-[220px] h-[360px] md:w-[180px] md:h-[220px]"
+        className="absolute -left-32 top-1/2 -translate-y-1/2 z-0 w-[220px] h-[360px] md:w-[200px] md:h-[300px]"
         whileHover={{ opacity: 0.9 }}
         initial={{ opacity: 0.4 }}
         animate={{ opacity: 0.4 }}
@@ -48,8 +48,8 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
         tabIndex={-1}
         aria-label={`이전 프로젝트: ${prevProject.title}`}
       >
-        <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-50 pointer-events-none">
-          <div className="relative w-full h-72 md:h-32">
+        <div className="bg-gray-50/80 rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-50 pointer-events-none">
+          <div className="relative w-full h-72 md:h-40">
             <Image
               src={prevProject.images}
               alt={prevProject.title}
@@ -67,7 +67,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
       {/* Next Project Preview (background) */}
       <motion.button
-        className="absolute -right-32 top-1/2 -translate-y-1/2 z-0 w-[220px] h-[360px] md:w-[180px] md:h-[220px]"
+        className="absolute -right-32 top-1/2 -translate-y-1/2 z-0 w-[220px] h-[360px] md:w-[200px] md:h-[300px]"
         whileHover={{ opacity: 0.9 }}
         initial={{ opacity: 0.4 }}
         animate={{ opacity: 0.4 }}
@@ -77,8 +77,8 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
         tabIndex={-1}
         aria-label={`다음 프로젝트: ${nextProject.title}`}
       >
-        <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-50 pointer-events-none">
-          <div className="relative w-full h-72 md:h-32">
+        <div className="bg-gray-50/80 rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center h-full w-full border border-gray-50 pointer-events-none">
+          <div className="relative w-full h-72 md:h-40">
             <Image
               src={nextProject.images}
               alt={nextProject.title}
@@ -113,7 +113,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
           z: 10,
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="flex flex-col md:flex-row gap-12 items-center max-w-6xl mx-auto p-6 sm:p-12 bg-white rounded-2xl shadow-xl border-gray-200 z-10"
+        className="flex flex-col md:flex-row gap-12 items-center p-6 sm:p-12 bg-gray-50 rounded-2xl shadow-xl border-gray-200 z-10"
       >
         {/* Left side - Project Image */}
         <div className="relative w-full aspect-[4/3] overflow-hidden">
