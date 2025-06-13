@@ -35,7 +35,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
   const nextProject = projects[getNextIndex()];
 
   return (
-    <div className="relative max-w-6xl mx-auto">
+    <div className="relative">
       {/* Previous Project Preview (background) */}
       <motion.button
         className="absolute -left-28 top-1/2 -translate-y-1/2 z-0"
