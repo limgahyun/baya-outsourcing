@@ -189,7 +189,9 @@ export default function ProjectCarousel({
               setCurrentIndex(index);
             }}
             className={`w-2.5 h-2.5 rounded-full transition-colors ${
-              index === currentIndex ? `bg-${color}-500` : "bg-gray-300"
+              index === currentIndex
+                ? `bg-${color}-500`
+                : "bg-gray-300 hover:bg-gray-400"
             }`}
           />
         ))}
