@@ -33,7 +33,10 @@ export const categories: Category[] = [
 
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
         link: "/portfolio/sasohan",
-        modalContent: {},
+        modalContent: {
+          src: "/portfolio/sasohan/detail.png",
+          alt: "Sasohan Detail",
+        },
       },
       {
         id: "perfumory",
@@ -50,17 +53,17 @@ export const categories: Category[] = [
         },
       },
       {
-        id: "bogeoping",
-        title: "복어핑",
+        id: "bogeopung",
+        title: "복어펑",
         description:
           "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
-        images: "/portfolio/bogeoping/bogeoping.png",
+        images: "/portfolio/bogeopung/bogeopung.png",
 
         tags: ["Vue.js", "JavaScript", "SCSS"],
-        link: "/portfolio/bogeoping",
+        link: "/portfolio/bogeopung",
         modalContent: {
-          src: "/portfolio/bogeoping/detail.png",
-          alt: "Perfumory Detail",
+          src: "/portfolio/bogeopung/detail.png",
+          alt: "Bogeopung Detail",
         },
       },
     ],
@@ -93,24 +96,18 @@ export const categories: Category[] = [
 
         tags: ["React", "Node.js", "MongoDB"],
         link: "/portfolio/sasohan",
-        modalContent: {
-          src: "/portfolio/sasohan/detail.png",
-          alt: "Perfumory Detail",
-        },
+        modalContent: {},
       },
       {
         id: "commerce3",
         title: "커머스 프로젝트 3",
         description:
           "세 번째 커머스 프로젝트입니다. AI 기반 상품 추천 시스템을 도입했습니다.",
-        images: "/portfolio/bogeoping/bogeoping.png",
+        images: "/portfolio/bogeopung/bogeopung.png",
 
         tags: ["Vue.js", "Python", "TensorFlow"],
-        link: "/portfolio/bogeoping",
-        modalContent: {
-          src: "/portfolio/bogeoping/detail.png",
-          alt: "Perfumory Detail",
-        },
+        link: "/portfolio/bogeopung",
+        modalContent: {},
       },
     ],
   },
@@ -127,10 +124,7 @@ export const categories: Category[] = [
         images: "/portfolio/sasohan/sasohan.png",
         tags: ["React Native", "TypeScript", "Firebase"],
         link: "/portfolio/sasohan",
-        modalContent: {
-          src: "/portfolio/sasohan/detail.png",
-          alt: "Perfumory Detail",
-        },
+        modalContent: {},
       },
       {
         id: "other2",
@@ -140,21 +134,18 @@ export const categories: Category[] = [
 
         tags: ["Flutter", "Dart", "GraphQL"],
         link: "/portfolio/perfumory",
-        modalContent: {
-          src: "/portfolio/perfumory/detail.png",
-          alt: "Perfumory Detail",
-        },
+        modalContent: {},
       },
       {
         id: "other3",
         title: "기타 프로젝트 3",
         description: "세 번째 기타 프로젝트입니다. 새로운 기술을 도입했습니다.",
-        images: "/portfolio/bogeoping/bogeoping.png",
+        images: "/portfolio/bogeopung/bogeopung.png",
 
         tags: ["Angular", "TypeScript", "AWS"],
-        link: "/portfolio/bogeoping",
+        link: "/portfolio/bogeopung",
         modalContent: {
-          src: "/portfolio/bogeoping/detail.png",
+          src: "/portfolio/bogeopung/detail.png",
           alt: "Perfumory Detail",
         },
       },

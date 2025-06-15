@@ -209,7 +209,7 @@ export default function ProjectCarousel({
           onClick={() => setModalOpen(false)}
         >
           <div
-            className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="relative bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
