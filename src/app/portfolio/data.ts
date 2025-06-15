@@ -5,6 +5,10 @@ export interface Project {
   images: string;
   tags: string[];
   link: string;
+  modalContent: {
+    src?: string;
+    alt?: string;
+  };
 }
 
 export interface Category {
@@ -29,6 +33,7 @@ export const categories: Category[] = [
 
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
         link: "/portfolio/sasohan",
+        modalContent: {},
       },
       {
         id: "perfumory",
@@ -39,6 +44,10 @@ export const categories: Category[] = [
 
         tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
         link: "/portfolio/perfumory",
+        modalContent: {
+          src: "/portfolio/perfumory/detail.png",
+          alt: "Perfumory Detail",
+        },
       },
       {
         id: "bogeoping",
@@ -49,6 +58,10 @@ export const categories: Category[] = [
 
         tags: ["Vue.js", "JavaScript", "SCSS"],
         link: "/portfolio/bogeoping",
+        modalContent: {
+          src: "/portfolio/bogeoping/detail.png",
+          alt: "Perfumory Detail",
+        },
       },
     ],
   },
@@ -66,6 +79,10 @@ export const categories: Category[] = [
 
         tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
         link: "/portfolio/perfumory",
+        modalContent: {
+          src: "/portfolio/perfumory/detail.png",
+          alt: "Perfumory Detail",
+        },
       },
       {
         id: "commerce2",
@@ -76,6 +93,10 @@ export const categories: Category[] = [
 
         tags: ["React", "Node.js", "MongoDB"],
         link: "/portfolio/sasohan",
+        modalContent: {
+          src: "/portfolio/sasohan/detail.png",
+          alt: "Perfumory Detail",
+        },
       },
       {
         id: "commerce3",
@@ -86,6 +107,10 @@ export const categories: Category[] = [
 
         tags: ["Vue.js", "Python", "TensorFlow"],
         link: "/portfolio/bogeoping",
+        modalContent: {
+          src: "/portfolio/bogeoping/detail.png",
+          alt: "Perfumory Detail",
+        },
       },
     ],
   },
@@ -100,9 +125,12 @@ export const categories: Category[] = [
         description:
           "첫 번째 기타 프로젝트입니다. 혁신적인 솔루션을 제공합니다.",
         images: "/portfolio/sasohan/sasohan.png",
-
         tags: ["React Native", "TypeScript", "Firebase"],
         link: "/portfolio/sasohan",
+        modalContent: {
+          src: "/portfolio/sasohan/detail.png",
+          alt: "Perfumory Detail",
+        },
       },
       {
         id: "other2",
@@ -112,6 +140,10 @@ export const categories: Category[] = [
 
         tags: ["Flutter", "Dart", "GraphQL"],
         link: "/portfolio/perfumory",
+        modalContent: {
+          src: "/portfolio/perfumory/detail.png",
+          alt: "Perfumory Detail",
+        },
       },
       {
         id: "other3",
@@ -121,6 +153,10 @@ export const categories: Category[] = [
 
         tags: ["Angular", "TypeScript", "AWS"],
         link: "/portfolio/bogeoping",
+        modalContent: {
+          src: "/portfolio/bogeoping/detail.png",
+          alt: "Perfumory Detail",
+        },
       },
     ],
   },

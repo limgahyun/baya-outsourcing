@@ -16,6 +16,7 @@ export default function ProjectCarousel({
 }: ProjectCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [modalOpen, setModalOpen] = useState(false);
 
   const getPreviousIndex = () =>
     currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
@@ -37,6 +38,8 @@ export default function ProjectCarousel({
   const project = projects[currentIndex];
   const prevProject = projects[getPreviousIndex()];
   const nextProject = projects[getNextIndex()];
+
+  const hasDetail = project.modalContent.src !== undefined || null;
 
   return (
     <div className="relative">
@@ -168,13 +171,15 @@ export default function ProjectCarousel({
           </div>
 
           <div className="w-full flex justify-center sm:justify-start">
-            <a
-              href={project.link}
-              rel="noopener noreferrer"
-              className="inline-block text-gray-700 hover:text-gray-900 hover:border-gray-600 border-b-2 border-gray-200 px-0.5 py-1 font-medium transition-colors text-center"
-            >
-              프로젝트 보기
-            </a>
+            {hasDetail && (
+              <button
+                type="button"
+                onClick={() => setModalOpen(true)}
+                className="inline-block text-gray-700 hover:text-gray-900 hover:border-gray-600 border-b-2 border-gray-200 px-0.5 py-1 font-medium transition-colors text-center"
+              >
+                프로젝트 보기
+              </button>
+            )}
           </div>
         </motion.div>
       </motion.div>
@@ -196,6 +201,39 @@ export default function ProjectCarousel({
           />
         ))}
       </div>
+
+      {/* Modal for project detail */}
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+          onClick={() => setModalOpen(false)}
+        >
+          <div
+            className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-2 right-4 text-gray-500 text-2xl font-medium"
+              onClick={() => setModalOpen(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <div className="w-full">
+              {project.modalContent.src && (
+                <Image
+                  src={project.modalContent.src}
+                  alt={project.modalContent.alt || ""}
+                  width={1000}
+                  height={1000}
+                  className="w-full h-auto rounded-lg"
+                  style={{ maxWidth: "100%" }}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
