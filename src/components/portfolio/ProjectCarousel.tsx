@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Project } from "@/app/portfolio/data";
@@ -18,6 +18,10 @@ export default function ProjectCarousel({
   const [direction, setDirection] = useState(0); // -1 for left, 1 for right
   const [modalOpen, setModalOpen] = useState(false);
 
+  // Touch swipe state
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
   const getPreviousIndex = () =>
     currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
   const getNextIndex = () =>
@@ -31,6 +35,34 @@ export default function ProjectCarousel({
       if (nextIndex >= projects.length) nextIndex = 0;
       return nextIndex;
     });
+  };
+
+  // Swipe handlers for mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (window.innerWidth < 768) {
+      touchStartX.current = e.touches[0].clientX;
+    }
+  };
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (window.innerWidth < 768) {
+      touchEndX.current = e.touches[0].clientX;
+    }
+  };
+  const handleTouchEnd = () => {
+    if (
+      window.innerWidth < 768 &&
+      touchStartX.current !== null &&
+      touchEndX.current !== null
+    ) {
+      const distance = touchStartX.current - touchEndX.current;
+      if (distance > 50) {
+        paginate(1); // swipe left, next
+      } else if (distance < -50) {
+        paginate(-1); // swipe right, previous
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   if (!projects.length) return null;
@@ -121,6 +153,9 @@ export default function ProjectCarousel({
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="flex flex-col md:flex-row gap-12 items-center p-6 sm:p-12 bg-gray-50 rounded-2xl shadow-xl border-gray-200 z-10"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         {/* Left side - Project Image */}
         <div className="relative w-full aspect-[4/3] overflow-hidden">
