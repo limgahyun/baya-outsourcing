@@ -1,7 +1,7 @@
 "use client";
 
 import Lottie from "lottie-react";
-import alarmAnimation from "../../../public/lottie/alarm.json";
+import alarmAnimation from "@/components/lottie/alarm.json";
 
 export default function ComingSoon() {
   return (
