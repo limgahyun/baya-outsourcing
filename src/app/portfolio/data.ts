@@ -69,6 +69,55 @@ export const categories: Category[] = [
     ],
   },
   {
+    id: "landing",
+    name: "랜딩페이지",
+    color: "yellow",
+    projects: [
+      {
+        id: "sasohan",
+        title: "사소한",
+        description:
+          "사회적 기업 중개와 소비관리 서비스. 개인의 지출을 관리할 수 있는 가계부 기록 서비스를 제공하면서 동시에 사회적 기업을 소개 및 주개해주는 플랫폼입니다.",
+        images: "/portfolio/sasohan/sasohan.png",
+
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        link: "/portfolio/sasohan",
+        modalContent: {
+          src: "/portfolio/sasohan/detail.png",
+          alt: "Sasohan Detail",
+        },
+      },
+      {
+        id: "perfumory",
+        title: "perfumory",
+        description:
+          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
+        images: "/portfolio/perfumory/perfumory.png",
+
+        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
+        link: "/portfolio/perfumory",
+        modalContent: {
+          src: "/portfolio/perfumory/detail.png",
+          alt: "Perfumory Detail",
+        },
+      },
+      {
+        id: "bogeopung",
+        title: "복어펑",
+        description:
+          "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
+        images: "/portfolio/bogeopung/bogeopung.png",
+
+        tags: ["Vue.js", "JavaScript", "SCSS"],
+        link: "/portfolio/bogeopung",
+        modalContent: {
+          src: "/portfolio/bogeopung/detail.png",
+          alt: "Bogeopung Detail",
+        },
+      },
+    ],
+  },
+  {
     id: "commerce",
     name: "커머스",
     color: "green",
@@ -112,9 +161,156 @@ export const categories: Category[] = [
     ],
   },
   {
+    id: "community",
+    name: "커뮤니티",
+    color: "gray",
+    projects: [
+      {
+        id: "sasohan",
+        title: "사소한",
+        description:
+          "사회적 기업 중개와 소비관리 서비스. 개인의 지출을 관리할 수 있는 가계부 기록 서비스를 제공하면서 동시에 사회적 기업을 소개 및 주개해주는 플랫폼입니다.",
+        images: "/portfolio/sasohan/sasohan.png",
+
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        link: "/portfolio/sasohan",
+        modalContent: {
+          src: "/portfolio/sasohan/detail.png",
+          alt: "Sasohan Detail",
+        },
+      },
+      {
+        id: "perfumory",
+        title: "perfumory",
+        description:
+          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
+        images: "/portfolio/perfumory/perfumory.png",
+
+        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
+        link: "/portfolio/perfumory",
+        modalContent: {
+          src: "/portfolio/perfumory/detail.png",
+          alt: "Perfumory Detail",
+        },
+      },
+      {
+        id: "bogeopung",
+        title: "복어펑",
+        description:
+          "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
+        images: "/portfolio/bogeopung/bogeopung.png",
+
+        tags: ["Vue.js", "JavaScript", "SCSS"],
+        link: "/portfolio/bogeopung",
+        modalContent: {
+          src: "/portfolio/bogeopung/detail.png",
+          alt: "Bogeopung Detail",
+        },
+      },
+    ],
+  },
+  {
+    id: "order",
+    name: "예약/신청/오더",
+    color: "red",
+    projects: [
+      {
+        id: "sasohan",
+        title: "사소한",
+        description:
+          "사회적 기업 중개와 소비관리 서비스. 개인의 지출을 관리할 수 있는 가계부 기록 서비스를 제공하면서 동시에 사회적 기업을 소개 및 주개해주는 플랫폼입니다.",
+        images: "/portfolio/sasohan/sasohan.png",
+
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        link: "/portfolio/sasohan",
+        modalContent: {
+          src: "/portfolio/sasohan/detail.png",
+          alt: "Sasohan Detail",
+        },
+      },
+      {
+        id: "perfumory",
+        title: "perfumory",
+        description:
+          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
+        images: "/portfolio/perfumory/perfumory.png",
+
+        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
+        link: "/portfolio/perfumory",
+        modalContent: {
+          src: "/portfolio/perfumory/detail.png",
+          alt: "Perfumory Detail",
+        },
+      },
+      {
+        id: "bogeopung",
+        title: "복어펑",
+        description:
+          "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
+        images: "/portfolio/bogeopung/bogeopung.png",
+
+        tags: ["Vue.js", "JavaScript", "SCSS"],
+        link: "/portfolio/bogeopung",
+        modalContent: {
+          src: "/portfolio/bogeopung/detail.png",
+          alt: "Bogeopung Detail",
+        },
+      },
+    ],
+  },
+  {
+    id: "video",
+    name: "강의/영상/OTT",
+    color: "blue",
+    projects: [
+      {
+        id: "sasohan",
+        title: "사소한",
+        description:
+          "사회적 기업 중개와 소비관리 서비스. 개인의 지출을 관리할 수 있는 가계부 기록 서비스를 제공하면서 동시에 사회적 기업을 소개 및 주개해주는 플랫폼입니다.",
+        images: "/portfolio/sasohan/sasohan.png",
+
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        link: "/portfolio/sasohan",
+        modalContent: {
+          src: "/portfolio/sasohan/detail.png",
+          alt: "Sasohan Detail",
+        },
+      },
+      {
+        id: "perfumory",
+        title: "perfumory",
+        description:
+          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
+        images: "/portfolio/perfumory/perfumory.png",
+
+        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
+        link: "/portfolio/perfumory",
+        modalContent: {
+          src: "/portfolio/perfumory/detail.png",
+          alt: "Perfumory Detail",
+        },
+      },
+      {
+        id: "bogeopung",
+        title: "복어펑",
+        description:
+          "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
+        images: "/portfolio/bogeopung/bogeopung.png",
+
+        tags: ["Vue.js", "JavaScript", "SCSS"],
+        link: "/portfolio/bogeopung",
+        modalContent: {
+          src: "/portfolio/bogeopung/detail.png",
+          alt: "Bogeopung Detail",
+        },
+      },
+    ],
+  },
+  {
     id: "others",
     name: "기타",
-    color: "red",
+    color: "yellow",
     projects: [
       {
         id: "other1",

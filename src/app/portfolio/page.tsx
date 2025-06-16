@@ -47,7 +47,13 @@ export default function PortfolioPage() {
                       ? "bg-blue-500"
                       : category.color === "green"
                       ? "bg-green-500"
-                      : "bg-red-500"
+                      : category.color === "red"
+                      ? "bg-red-500"
+                      : category.color === "yellow"
+                      ? "bg-yellow-500"
+                      : category.color === "gray"
+                      ? "bg-gray-500"
+                      : "bg-blue-500"
                   }`}
                 />
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900">
