@@ -1,17 +1,17 @@
-import Hero from "@/components/Hero";
-import Problem from "@/components/Problem";
-import Severity from "@/components/Severity";
-import Necessity from "@/components/Necessity";
-import Portfolio from "@/components/Portfolio";
-import Testimonials from "@/components/Testimonials";
-import Strategy from "@/components/Strategy";
-import CTA from "@/components/CTA";
+import Hero from "@/components/main/Hero";
+import Problem from "@/components/main/Problem";
+import Severity from "@/components/main/Severity";
+import Necessity from "@/components/main/Necessity";
+import Portfolio from "@/components/main/Portfolio";
+import Testimonials from "@/components/main/Testimonials";
+import Strategy from "@/components/main/Strategy";
+import CTA from "@/components/main/CTA";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Severity />
+      {/* <Severity /> */}
       <Problem />
       <Necessity />
       <Portfolio />

@@ -9,11 +9,11 @@ import {
   useSpring,
   MotionValue,
 } from "framer-motion";
-import clientAnimation from "../../public/lottie/client.json";
-import companyAnimation from "../../public/lottie/company.json";
-import severityAnimation1 from "../../public/lottie/severity1.json";
-import severityAnimation2 from "../../public/lottie/severity2.json";
-import severityAnimation3 from "../../public/lottie/severity3.json";
+import clientAnimation from "/lottie/client.json";
+import companyAnimation from "/lottie/company.json";
+import severityAnimation1 from "/lottie/severity1.json";
+import severityAnimation2 from "/lottie/severity2.json";
+import severityAnimation3 from "/lottie/severity3.json";
 
 // Define a more specific type for Lottie animation data
 interface LottieAnimationData {
