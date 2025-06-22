@@ -69,6 +69,16 @@ export default function Navbar() {
                 바야 견적소
               </Link>
               <Link
+                href="/coming-soon"
+                className={`font-pretendard transition-colors break-keep ${
+                  isScrolled || !isTransparentNavbar || isMenuOpen
+                    ? "text-gray-700 hover:text-blue-1000"
+                    : "text-white hover:text-gray-100"
+                }`}
+              >
+                기획문서 가이드
+              </Link>
+              <Link
                 href="/portfolio"
                 className={`font-pretendard transition-colors break-keep ${
                   isScrolled || !isTransparentNavbar || isMenuOpen
@@ -152,6 +162,13 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               바야 견적소
+            </Link>
+            <Link
+              href="/coming-soon"
+              className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              기획문서 가이드
             </Link>
             <Link
               href="/portfolio"
