@@ -45,6 +45,7 @@ export default function SeminarPage() {
                   dDay={dDay}
                   thumbnail={seminar.thumbnail}
                   isClosed={isClosed}
+                  url={seminar.url}
                 />
               );
             })}

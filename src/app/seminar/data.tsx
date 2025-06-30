@@ -7,6 +7,7 @@ export interface Seminar {
   thumbnail: string;
   date: string; // format: YYYY-MM-DD
   time: string;
+  url: string | null;
 }
 
 export const seminars: Seminar[] = [
@@ -23,6 +24,7 @@ export const seminars: Seminar[] = [
     thumbnail: "/seminar/offTheRecord.png",
     date: "2025-06-22",
     time: "20:00",
+    url: null,
   },
   {
     id: "withNothing",
@@ -36,5 +38,6 @@ export const seminars: Seminar[] = [
     thumbnail: "/seminar/withNothing.png",
     date: "2025-07-11",
     time: "20:00",
+    url: "https://tally.so/r/wLj5O1",
   },
 ];

@@ -8,6 +8,7 @@ interface SeminarCardProps {
   dDay: string; // e.g., D-3, D-0, 종료
   thumbnail: string;
   isClosed?: boolean;
+  url: string | null;
 }
 
 const SeminarCard: React.FC<SeminarCardProps> = ({
@@ -17,8 +18,9 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
   dDay,
   thumbnail,
   isClosed = false,
+  url,
 }) => {
-  return (
+  const cardContent = (
     <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center bg-gray-100">
       {/* Background Image */}
       <Image
@@ -78,6 +80,27 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
       </div>
     </div>
   );
+
+  if (url) {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+        tabIndex={isClosed ? -1 : 0}
+        aria-disabled={isClosed}
+      >
+        {cardContent}
+      </a>
+    );
+  } else {
+    return (
+      <div className="block" tabIndex={-1} aria-disabled>
+        {cardContent}
+      </div>
+    );
+  }
 };
 
 export default SeminarCard;
