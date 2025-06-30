@@ -22,9 +22,14 @@ function getDDay(seminarDate: string): { dDay: string; isClosed: boolean } {
 export default function SeminarPage() {
   return (
     <div className="container mx-auto px-4 py-16 max-w-8xl space-y-6 mt-16">
-      <h1 className="text-3xl md:text-4xl font-gmarket font-bold text-blue-900 text-center">
-        세미나
-      </h1>
+      <div className="text-center mb-12">
+        <h1 className="text-3xl md:text-4xl font-gmarket font-bold mb-4 text-blue-900">
+          세미나
+        </h1>
+        <p className="text-xl text-gray-600">
+          모집 중인 세미나 정보를 확인하세요
+        </p>
+      </div>
 
       <section className="mx-auto">
         <div className="max-w-6xl mx-auto">
