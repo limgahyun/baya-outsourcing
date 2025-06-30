@@ -8,7 +8,7 @@ interface SeminarCardProps {
   dDay: string; // e.g., D-3, D-0, 종료
   thumbnail: string;
   isClosed?: boolean;
-  url: string | null;
+  url: string;
 }
 
 const SeminarCard: React.FC<SeminarCardProps> = ({
@@ -81,7 +81,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
     </div>
   );
 
-  if (url) {
+  if (!isClosed) {
     return (
       <a
         href={url}
