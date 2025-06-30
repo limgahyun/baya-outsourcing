@@ -55,9 +55,19 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-6">
             {/* Desktop Navigation Menu */}
             <div className="hidden md:flex items-center space-x-8">
+              <Link
+                href="/seminar"
+                className={`font-pretendard transition-colors break-keep ${
+                  isScrolled || !isTransparentNavbar || isMenuOpen
+                    ? "text-gray-700 hover:text-blue-1000"
+                    : "text-white hover:text-gray-100"
+                }`}
+              >
+                세미나
+              </Link>
               <Link
                 href="/quote"
                 className={`font-pretendard transition-colors break-keep ${
@@ -156,6 +166,13 @@ export default function Navbar() {
           }`}
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4 ">
+            <Link
+              href="/seminar"
+              className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              세미나
+            </Link>
             <Link
               href="/quote"
               className="font-pretendard text-gray-700 hover:text-blue-1000 transition-colors py-2 break-keep"
