@@ -91,6 +91,9 @@ const config: Config = {
         "scroll-up-slow": "scroll-up 25s linear infinite",
         "scroll-down-fast": "scroll-down 15s linear infinite",
       },
+      screens: {
+        xs: "375px",
+      },
     },
   },
   plugins: [],
