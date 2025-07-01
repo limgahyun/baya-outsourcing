@@ -70,7 +70,7 @@ export const categories: Category[] = [
         id: "insightful",
         title: "Insightful",
         description:
-          "인사이트풀은 데이터 기반 인사이트를 제공하는 서비스입니다.",
+          "데이터로 팀의 성장 곡선을 그리세요. 매출과 팀 성과의 흐름을 투명하게 보여주는 대시보드 서비스입니다.",
         images: "/portfolio/insightful/insightful.png",
         tags: ["Web", "Service"],
         link: "/portfolio/insightful",
@@ -82,7 +82,7 @@ export const categories: Category[] = [
       {
         id: "notello",
         title: "Notello",
-        description: "노텔로는 효율적인 노트 및 일정 관리를 지원합니다.",
+        description: "나를 성장시키는 기록, Notello에서 시작하세요.",
         images: "/portfolio/notello/notello.png",
         tags: ["Web", "Service"],
         link: "/portfolio/notello",
@@ -94,7 +94,8 @@ export const categories: Category[] = [
       {
         id: "trackly",
         title: "Trackly",
-        description: "트랙리는 프로젝트 및 작업 추적을 위한 플랫폼입니다.",
+        description:
+          "진짜 운동, 진짜 코치와 함께 시작해보세요. 운동을 더 제대로, 더 전문적으로 하고 싶은 분들을 위한 스포츠 코칭 & 공간 매칭 플릿폼입니다.",
         images: "/portfolio/trackly/trackly.png",
         tags: ["Web", "Service"],
         link: "/portfolio/trackly",
@@ -106,7 +107,8 @@ export const categories: Category[] = [
       {
         id: "gymnetic",
         title: "Gymnetic",
-        description: "짐네틱은 개인 맞춤형 피트니스 관리 서비스를 제공합니다.",
+        description:
+          "운동의 모든 순간을 데이터와 연결하다. 운동의 모든 순간을 이 앱에서 경험해보세요.",
         images: "/portfolio/gymnetic/gymnetic.png",
         tags: ["Web", "Service"],
         link: "/portfolio/gymnetic",
@@ -118,7 +120,7 @@ export const categories: Category[] = [
       {
         id: "spotly",
         title: "Spotly",
-        description: "스팟리는 위치 기반 추천 서비스를 제공합니다.",
+        description: "우리의 취향을 아우르는, 똑똑한 로컬 맛집 지도.",
         images: "/portfolio/spotly/spotly.png",
         tags: ["Web", "Service"],
         link: "/portfolio/spotly",
@@ -130,7 +132,8 @@ export const categories: Category[] = [
       {
         id: "nutrilog",
         title: "Nutrilog",
-        description: "뉴트릴로그는 영양 및 식단 관리를 돕는 서비스입니다.",
+        description:
+          "하루의 건강을 데이터로 기록하고, 맞춤형 영양 솔루션까지 한 번에.",
         images: "/portfolio/nutrilog/nutrilog.png",
         tags: ["Web", "Service"],
         link: "/portfolio/nutrilog",
@@ -142,7 +145,8 @@ export const categories: Category[] = [
       {
         id: "coinsight",
         title: "Coinsight",
-        description: "코인사이트는 암호화폐 시장 분석 도구입니다.",
+        description:
+          "내 모든 코인, 한 눈에. 자산부터 세금까지 완벽하게 관리합니다.",
         images: "/portfolio/coinsight/coinsight.png",
         tags: ["Web", "Service"],
         link: "/portfolio/coinsight",
@@ -154,7 +158,7 @@ export const categories: Category[] = [
       {
         id: "humance",
         title: "Humance",
-        description: "휴맨스는 인사 및 조직 관리를 위한 솔루션입니다.",
+        description: "모든 HR, 한 곳에서 - 팀의 시간을 더 가치있게.",
         images: "/portfolio/humance/humance.png",
         tags: ["Web", "Service"],
         link: "/portfolio/humance",
@@ -166,7 +170,8 @@ export const categories: Category[] = [
       {
         id: "cyclink",
         title: "Cyclink",
-        description: "사이클링크는 자전거 라이프스타일 플랫폼입니다.",
+        description:
+          "더 자유로운 이동, 더 스마트한 라이딩. cyclink로 즐거운 여정이 더욱 안전하고 특별해집니다.",
         images: "/portfolio/cyclink/cyclink.png",
         tags: ["Web", "Service"],
         link: "/portfolio/cyclink",
@@ -178,7 +183,8 @@ export const categories: Category[] = [
       {
         id: "defina",
         title: "Defina",
-        description: "데피나는 디지털 파이낸스 관리 서비스입니다.",
+        description:
+          "미래를 정의하고, 비전에 투자합니다. 글로벌 무대에서 도전적인 아이디어와 탁월한 팀을 발굴합니다.",
         images: "/portfolio/defina/defina.png",
         tags: ["Web", "Service"],
         link: "/portfolio/defina",
@@ -190,7 +196,8 @@ export const categories: Category[] = [
       {
         id: "plantelligence",
         title: "Plantelligence",
-        description: "플랜텔리전스는 스마트 플랜트 관리 솔루션입니다.",
+        description:
+          "식물의 건강, 데이터로 더 스마트하게. 토양과 식물 상태를 손쉽게 스캔하면 AI가 맞춤형 진단과 관리 팁을 제공합니다.",
         images: "/portfolio/plantelligence/plantelligence.png",
         tags: ["Web", "Service"],
         link: "/portfolio/plantelligence",
@@ -202,7 +209,8 @@ export const categories: Category[] = [
       {
         id: "rumor",
         title: "Rumor",
-        description: "루머는 소문 및 정보 공유 커뮤니티입니다.",
+        description:
+          "공실 해소 수요조사 플랫폼. 주민은 원하는 가게로 주변을 채우고, 창업자는 수요에 기반해 입지를 선정하는, 주민과 창업자 모두에게 WIN-WIN 솔루션",
         images: "/portfolio/rumor/rumor.png",
         tags: ["Web", "Service"],
         link: "/portfolio/rumor",
@@ -214,7 +222,8 @@ export const categories: Category[] = [
       {
         id: "mooplanner",
         title: "Mooplanner",
-        description: "무플래너는 일정 및 목표 관리를 지원합니다.",
+        description:
+          "휴식에 집중하는 워케이션 솔루션. 일과 휴식의 완벽한 밸런스, 낯선 곳에서도 익숙한 편안함을 누리세요.",
         images: "/portfolio/mooplanner/mooplanner.png",
         tags: ["Web", "Service"],
         link: "/portfolio/mooplanner",
@@ -229,234 +238,36 @@ export const categories: Category[] = [
     id: "landing",
     name: "랜딩페이지",
     color: "yellow",
-    projects: [
-      {
-        id: "sasohan",
-        title: "사소한",
-        description:
-          "사회적 기업 중개와 소비관리 서비스. 개인의 지출을 관리할 수 있는 가계부 기록 서비스를 제공하면서 동시에 사회적 기업을 소개 및 주개해주는 플랫폼입니다.",
-        images: "/portfolio/sasohan/sasohan.png",
-
-        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-        link: "/portfolio/sasohan",
-        modalContent: {
-          src: "/portfolio/sasohan/detail.png",
-          alt: "Sasohan Detail",
-        },
-      },
-      {
-        id: "perfumory",
-        title: "perfumory",
-        description:
-          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
-        images: "/portfolio/perfumory/perfumory.png",
-
-        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
-        link: "/portfolio/perfumory",
-        modalContent: {
-          src: "/portfolio/perfumory/detail.png",
-          alt: "Perfumory Detail",
-        },
-      },
-      {
-        id: "bogeopung",
-        title: "복어펑",
-        description:
-          "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
-        images: "/portfolio/bogeopung/bogeopung.png",
-
-        tags: ["Vue.js", "JavaScript", "SCSS"],
-        link: "/portfolio/bogeopung",
-        modalContent: {
-          src: "/portfolio/bogeopung/detail.png",
-          alt: "Bogeopung Detail",
-        },
-      },
-    ],
+    projects: [],
   },
   {
     id: "commerce",
     name: "커머스",
     color: "green",
-    projects: [
-      {
-        id: "perfumory",
-        title: "perfumory",
-        description:
-          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
-        images: "/portfolio/perfumory/perfumory.png",
-
-        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
-        link: "/portfolio/perfumory",
-        modalContent: {
-          src: "/portfolio/perfumory/detail.png",
-          alt: "Perfumory Detail",
-        },
-      },
-    ],
+    projects: [],
   },
   {
     id: "community",
     name: "커뮤니티",
     color: "gray",
-    projects: [
-      {
-        id: "sasohan",
-        title: "사소한",
-        description:
-          "사회적 기업 중개와 소비관리 서비스. 개인의 지출을 관리할 수 있는 가계부 기록 서비스를 제공하면서 동시에 사회적 기업을 소개 및 주개해주는 플랫폼입니다.",
-        images: "/portfolio/sasohan/sasohan.png",
-
-        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-        link: "/portfolio/sasohan",
-        modalContent: {
-          src: "/portfolio/sasohan/detail.png",
-          alt: "Sasohan Detail",
-        },
-      },
-      {
-        id: "perfumory",
-        title: "perfumory",
-        description:
-          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
-        images: "/portfolio/perfumory/perfumory.png",
-
-        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
-        link: "/portfolio/perfumory",
-        modalContent: {
-          src: "/portfolio/perfumory/detail.png",
-          alt: "Perfumory Detail",
-        },
-      },
-      {
-        id: "bogeopung",
-        title: "복어펑",
-        description:
-          "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
-        images: "/portfolio/bogeopung/bogeopung.png",
-
-        tags: ["Vue.js", "JavaScript", "SCSS"],
-        link: "/portfolio/bogeopung",
-        modalContent: {
-          src: "/portfolio/bogeopung/detail.png",
-          alt: "Bogeopung Detail",
-        },
-      },
-    ],
+    projects: [],
   },
   {
     id: "order",
     name: "예약/신청/오더",
     color: "red",
-    projects: [
-      {
-        id: "sasohan",
-        title: "사소한",
-        description:
-          "사회적 기업 중개와 소비관리 서비스. 개인의 지출을 관리할 수 있는 가계부 기록 서비스를 제공하면서 동시에 사회적 기업을 소개 및 주개해주는 플랫폼입니다.",
-        images: "/portfolio/sasohan/sasohan.png",
-
-        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-        link: "/portfolio/sasohan",
-        modalContent: {
-          src: "/portfolio/sasohan/detail.png",
-          alt: "Sasohan Detail",
-        },
-      },
-      {
-        id: "perfumory",
-        title: "perfumory",
-        description:
-          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
-        images: "/portfolio/perfumory/perfumory.png",
-
-        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
-        link: "/portfolio/perfumory",
-        modalContent: {
-          src: "/portfolio/perfumory/detail.png",
-          alt: "Perfumory Detail",
-        },
-      },
-      {
-        id: "bogeopung",
-        title: "복어펑",
-        description:
-          "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
-        images: "/portfolio/bogeopung/bogeopung.png",
-
-        tags: ["Vue.js", "JavaScript", "SCSS"],
-        link: "/portfolio/bogeopung",
-        modalContent: {
-          src: "/portfolio/bogeopung/detail.png",
-          alt: "Bogeopung Detail",
-        },
-      },
-    ],
+    projects: [],
   },
   {
     id: "video",
     name: "강의/영상/OTT",
     color: "blue",
-    projects: [
-      {
-        id: "sasohan",
-        title: "사소한",
-        description:
-          "사회적 기업 중개와 소비관리 서비스. 개인의 지출을 관리할 수 있는 가계부 기록 서비스를 제공하면서 동시에 사회적 기업을 소개 및 주개해주는 플랫폼입니다.",
-        images: "/portfolio/sasohan/sasohan.png",
-
-        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-        link: "/portfolio/sasohan",
-        modalContent: {
-          src: "/portfolio/sasohan/detail.png",
-          alt: "Sasohan Detail",
-        },
-      },
-      {
-        id: "perfumory",
-        title: "perfumory",
-        description:
-          "커스텀 향수 제작 및 기록 서비스, perfumory. 퍼퓨모리는 커스텀 향수를 제작할 수 있도록 돕는 플랫폼입니다.",
-        images: "/portfolio/perfumory/perfumory.png",
-
-        tags: ["Next.js", "TypeScript", "Redux", "Tailwind CSS"],
-        link: "/portfolio/perfumory",
-        modalContent: {
-          src: "/portfolio/perfumory/detail.png",
-          alt: "Perfumory Detail",
-        },
-      },
-      {
-        id: "bogeopung",
-        title: "복어펑",
-        description:
-          "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
-        images: "/portfolio/bogeopung/bogeopung.png",
-
-        tags: ["Vue.js", "JavaScript", "SCSS"],
-        link: "/portfolio/bogeopung",
-        modalContent: {
-          src: "/portfolio/bogeopung/detail.png",
-          alt: "Bogeopung Detail",
-        },
-      },
-    ],
+    projects: [],
   },
   {
     id: "others",
     name: "기타",
     color: "yellow",
-    projects: [
-      {
-        id: "other1",
-        title: "기타 프로젝트 1",
-        description:
-          "첫 번째 기타 프로젝트입니다. 혁신적인 솔루션을 제공합니다.",
-        images: "/portfolio/sasohan/sasohan.png",
-        tags: ["React Native", "TypeScript", "Firebase"],
-        link: "/portfolio/sasohan",
-        modalContent: {},
-      },
-    ],
+    projects: [],
   },
 ];
