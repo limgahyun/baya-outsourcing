@@ -21,7 +21,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
   url,
 }) => {
   const cardContent = (
-    <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center bg-gray-100">
+    <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center bg-gray-100 transition-transform transition-shadow duration-300 ">
       {/* Background Image */}
       <Image
         src={thumbnail}
@@ -87,7 +87,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="block"
+        className="block transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-105"
         tabIndex={isClosed ? -1 : 0}
         aria-disabled={isClosed}
       >
