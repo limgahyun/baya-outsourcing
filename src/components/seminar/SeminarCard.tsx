@@ -21,7 +21,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
   url,
 }) => {
   const cardContent = (
-    <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center bg-gray-100 transition-transform transition-shadow duration-300 ">
+    <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center bg-gray-100 ">
       {/* Background Image */}
       <Image
         src={thumbnail}
