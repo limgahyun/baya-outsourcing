@@ -34,21 +34,28 @@ export default function SeminarPage() {
       <section className="mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {seminars.map((seminar: Seminar) => {
-              const { dDay, isClosed } = getDDay(seminar.date);
-              return (
-                <SeminarCard
-                  key={seminar.id}
-                  organization={seminar.organization}
-                  title={seminar.title}
-                  dateTime={formatSeminarDateTime(seminar.date, seminar.time)}
-                  dDay={dDay}
-                  thumbnail={seminar.thumbnail}
-                  isClosed={isClosed}
-                  url={seminar.url}
-                />
-              );
-            })}
+            {[...seminars]
+              .sort((a, b) => {
+                const aClosed = getDDay(a.date).isClosed;
+                const bClosed = getDDay(b.date).isClosed;
+                if (aClosed === bClosed) return 0;
+                return aClosed ? 1 : -1; // isClosed가 true면 뒤로
+              })
+              .map((seminar: Seminar) => {
+                const { dDay, isClosed } = getDDay(seminar.date);
+                return (
+                  <SeminarCard
+                    key={seminar.id}
+                    organization={seminar.organization}
+                    title={seminar.title}
+                    dateTime={formatSeminarDateTime(seminar.date, seminar.time)}
+                    dDay={dDay}
+                    thumbnail={seminar.thumbnail}
+                    isClosed={isClosed}
+                    url={seminar.url}
+                  />
+                );
+              })}
           </div>
         </div>
       </section>
