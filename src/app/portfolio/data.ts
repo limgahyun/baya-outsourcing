@@ -20,6 +20,28 @@ export interface Category {
 
 export const PROJECTS: Project[] = [
   {
+    id: "bogeopung",
+    title: "복어펑",
+    description:
+      "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
+    images: "/portfolio/bogeopung/bogeopung.png",
+    tags: [
+      "일반로그인/회원가입",
+      "온보딩 (추가정보)",
+      "홈 화면 구성",
+      "일반 게시글",
+      "콘텐츠 저장",
+      "리뷰/평가",
+      "AI",
+      "푸시 알림",
+    ],
+    link: "/portfolio/bogeopung",
+    modalContent: {
+      src: "/portfolio/bogeopung/detail.png",
+      alt: "Bogeopung Detail",
+    },
+  },
+  {
     id: "sasohan",
     title: "사소한",
     description:
@@ -64,28 +86,6 @@ export const PROJECTS: Project[] = [
     modalContent: {
       src: "/portfolio/perfumory/detail.png",
       alt: "Perfumory Detail",
-    },
-  },
-  {
-    id: "bogeopung",
-    title: "복어펑",
-    description:
-      "내 손 안의 불안 퇴치제. 복어핑은 게이미피케이션 기반의 감정 기록 앱입니다. 복어를 생성하여 감정을 기록하고 표현할 수 있습니다.",
-    images: "/portfolio/bogeopung/bogeopung.png",
-    tags: [
-      "일반로그인/회원가입",
-      "온보딩 (추가정보)",
-      "홈 화면 구성",
-      "일반 게시글",
-      "콘텐츠 저장",
-      "리뷰/평가",
-      "AI",
-      "푸시 알림",
-    ],
-    link: "/portfolio/bogeopung",
-    modalContent: {
-      src: "/portfolio/bogeopung/detail.png",
-      alt: "Bogeopung Detail",
     },
   },
   {
