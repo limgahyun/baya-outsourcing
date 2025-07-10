@@ -40,4 +40,19 @@ export const seminars: Seminar[] = [
     time: "20:00",
     url: "https://tally.so/r/wLj5O1",
   },
+  {
+    id: "seminar3",
+    organization: "BAYA",
+    title: (
+      <>
+        정부지원사업
+        <br />
+        <span className="font-extrabold">불패의 법칙</span>
+      </>
+    ),
+    thumbnail: "/seminar/seminar3.png",
+    date: "2025-07-16",
+    time: "20:00",
+    url: "https://tally.so/r/wv6Kbl",
+  },
 ];
