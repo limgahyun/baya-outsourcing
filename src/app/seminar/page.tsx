@@ -53,6 +53,7 @@ export default function SeminarPage() {
                     thumbnail={seminar.thumbnail}
                     isClosed={isClosed}
                     url={seminar.url}
+                    description={seminar.description}
                   />
                 );
               })}

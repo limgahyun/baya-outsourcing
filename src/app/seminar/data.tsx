@@ -8,6 +8,7 @@ export interface Seminar {
   date: string; // format: YYYY-MM-DD
   time: string;
   url: string;
+  description: ReactNode;
 }
 
 export const seminars: Seminar[] = [
@@ -25,6 +26,14 @@ export const seminars: Seminar[] = [
     date: "2025-06-22",
     time: "20:00",
     url: "https://tally.so/r/mVBxLy",
+    description: (
+      <>
+        선착순 마감!{" "}
+        <span className="text-white/80 font-semibold text-sm sm:text-2xl md:text-lg xl:text-xl">
+          무료 라이브
+        </span>
+      </>
+    ),
   },
   {
     id: "withNothing",
@@ -39,6 +48,14 @@ export const seminars: Seminar[] = [
     date: "2025-07-11",
     time: "20:00",
     url: "https://tally.so/r/wLj5O1",
+    description: (
+      <>
+        선착순 마감!{" "}
+        <span className="text-white/80 font-semibold text-sm sm:text-2xl md:text-lg xl:text-xl">
+          무료 라이브
+        </span>
+      </>
+    ),
   },
   {
     id: "seminar3",
@@ -54,5 +71,6 @@ export const seminars: Seminar[] = [
     date: "2025-07-16",
     time: "20:00",
     url: "https://tally.so/r/wv6Kbl",
+    description: <>선착순 마감!</>,
   },
 ];

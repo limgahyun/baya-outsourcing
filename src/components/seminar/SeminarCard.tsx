@@ -9,6 +9,7 @@ interface SeminarCardProps {
   thumbnail: string;
   isClosed?: boolean;
   url: string;
+  description: React.ReactNode;
 }
 
 const SeminarCard: React.FC<SeminarCardProps> = ({
@@ -19,6 +20,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
   thumbnail,
   isClosed = false,
   url,
+  description,
 }) => {
   const cardContent = (
     <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center bg-gray-100 ">
@@ -71,10 +73,7 @@ const SeminarCard: React.FC<SeminarCardProps> = ({
           </div>
           {/* Notice */}
           <div className="text-sm sm:text-3xl md:text-lg xl:text-2xl font-bold text-red-600">
-            선착순 마감!{" "}
-            <span className="text-white/80 font-semibold text-sm sm:text-2xl md:text-lg xl:text-xl">
-              무료 라이브
-            </span>
+            {description}
           </div>
         </div>
       </div>
