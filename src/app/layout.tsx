@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "바야",
     images: [
       {
-        url: "https://i.ibb.co/FLkmyMtk/main2.png",
+        url: "https://i.ibb.co/XZ9hbjMx/ogImg.png",
         width: 1200,
         height: 630,
         alt: "바야 메인 이미지",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "바야 | 외주개발디자인",
     description: "사업을 이해하는 개발 파트너, 바야",
-    images: ["https://i.ibb.co/FLkmyMtk/main2.png"],
+    images: ["https://i.ibb.co/XZ9hbjMx/ogImg.png"],
   },
   alternates: {
     canonical: "https://ddugddag.com",
