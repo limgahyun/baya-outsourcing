@@ -18,7 +18,7 @@ export default function Footer() {
                 className="w-auto h-6 md:h-8"
               />
               <span className="font-pretendard font-bold text-lg md:text-xl text-blue-1000">
-                바야
+                바야 외주소
               </span>
             </div>
           </div>
