@@ -70,7 +70,7 @@ export const seminars: Seminar[] = [
     thumbnail: "/seminar/seminar3.png",
     date: "2025-07-16",
     time: "20:00",
-    url: "https://tally.so/r/wv6Kbl",
+    url: "https://tally.so/r/wdGrdK",
     description: <>선착순 마감!</>,
   },
 ];
